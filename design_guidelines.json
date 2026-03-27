@@ -1,0 +1,105 @@
+{
+  "theme": "light",
+  "archetype": "1_organic_earthy",
+  "design_philosophy": "E1 Strategy: Fusion over Imitation. The Ranjana Yoga Studio will blend organic, tactile warmth with high-end editorial precision. We use soft, earthy pastels grounded by sharp serif typography. Parallax depth, smooth scrolling (Lenis), and generous negative space will evoke the physical sensation of breathing and flow. Never use generic tech/SaaS styles.",
+  "colors": {
+    "background_primary": "#FDF8F2",
+    "background_secondary": "#F5EDE0",
+    "primary": "#F2C4CE",
+    "primary_hover": "#C9849A",
+    "text_main": "#3D3530",
+    "text_muted": "#8C7B6E",
+    "border_color": "#D4B896",
+    "gold_soft": "#C9A84C",
+    "gold_pale": "#EDD89A"
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond, serif",
+    "body_font": "Jost, sans-serif",
+    "heading_strategy": "Headings (Cormorant Garamond) must be expressive, elegant, and light (font-light or font-normal). Use tracking-tight for H1/H2. Avoid 'font-bold' to maintain editorial thinness. Use text-5xl to text-6xl+ for hero headings.",
+    "body_strategy": "Body text (Jost) must be clean and breathable (leading-relaxed). Use tracking-wide for uppercase overlines (e.g., tracking-[0.2em] text-xs).",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+  },
+  "layout_spacing": {
+    "philosophy": "Generous Spacing Philosophy. Use large padding (p-12, p-16, p-24) to create a sense of calm and emptiness. Elements should not feel crammed. Overlap text blocks slightly over images using negative margins or absolute positioning.",
+    "grid_system": "Use 'Bento Grid Mode A' (Tetris approach) for the Gallery and Services sections. Introduce asymmetry. Avoid equal-sized squares everywhere.",
+    "alignment": "Optical alignment over geometrical. Allow images to break out of containers to create depth."
+  },
+  "components": {
+    "buttons": "Pill-shaped (rounded-full). Default state: bg-[#F2C4CE] border border-[#C9A84C] text-[#3D3530]. Hover state: bg-[#C9849A] text-[#FDF8F2] border-[#C9849A]. Apply soft hover scale-up with Framer Motion.",
+    "cards": "Warm Beige bg (#F5EDE0), Sand border (#D4B896), 16px radius (rounded-2xl). No heavy shadows, rely on the 1px border. On hover: slight y-translate (-translate-y-1) and ambient shadow (shadow-lg).",
+    "navigation": "Sticky top bar, z-50. Ivory White bg (#FDF8F2) with crystal glassmorphism (backdrop-blur-xl bg-[#FDF8F2]/80). Logo left-aligned. Include soft hover states on links.",
+    "visual_decorations": "1. Soft radial gradient blobs (Pale Gold / Blush Pink) placed absolutely behind sections with blur-3xl opacity-30. 2. A fixed noise/grain texture overlay (pointer-events-none, mix-blend-overlay, opacity-5) covering the whole screen. 3. Lotus SVG motifs as section dividers in Soft Gold (#C9A84C)."
+  },
+  "motion_and_interactions": {
+    "scrolling": "Lenis smooth scrolling is MANDATORY for the entire application to add momentum and physical weight to the scroll.",
+    "animations": "Use Framer Motion. Elements should have 'fade-in-up' (initial opacity 0, y: 20 -> animate opacity 1, y: 0) triggered on scroll (whileInView). Images must have subtle parallax effects.",
+    "hover_states": "All interactive elements must change state visually. Smooth transitions: transition-all duration-300 ease-in-out."
+  },
+  "pages": {
+    "home": {
+      "sections": [
+        "Hero: Full-screen image with subtle parallax, transparent overlay (bg-white/20). Fade-in Cormorant Garamond title, CTA button.",
+        "Welcome/Stats Strip: Floating numbers with delicate Gold dividers.",
+        "Services Overview Cards: 3 cards (Warm Beige, Sand border), smooth hover lift.",
+        "Why Choose Us / Philosophy: Split screen layout. Text on left, image overlapping on right with a decorative Gold border frame offset.",
+        "Testimonials: Staggered elegant cards.",
+        "CTA Banner: Blush pink background with a soft radial blob behind text.",
+        "Instagram/Gallery Strip: Continuous slow marquee of images (using framer-motion or react-fast-marquee)."
+      ]
+    },
+    "about": {
+      "sections": [
+        "Hero: Simple header with muted taupe background.",
+        "Story & Philosophy: Elegant text columns with inset images.",
+        "Instructor Profile: Large profile image, minimal text."
+      ]
+    },
+    "services": {
+      "sections": [
+        "5 Service Detail Sections: Alternating image-left, image-right layout. Large typography, clear pricing/booking CTA per service.",
+        "Weight Loss Feature: Highlighted section with Soft Gold background."
+      ]
+    },
+    "schedule": {
+      "sections": [
+        "Weekly Class Timetable: Clean table or list layout, Warm Charcoal text, hovering rows highlight in Warm Beige."
+      ]
+    },
+    "gallery": {
+      "sections": [
+        "Photo Gallery with Masonry Grid: Asymmetrical bento grid spanning multiple columns and rows. No gaps between some images, gap-8 between others."
+      ]
+    },
+    "contact": {
+      "sections": [
+        "Contact Form with Dropdown: Pill-shaped inputs with Sand border. Custom dropdown.",
+        "Google Map Embed: Muted styling (grayscale/sepia filter via CSS).",
+        "Placeholder contact details: Address, Phone, Email."
+      ]
+    }
+  },
+  "media": {
+    "hero_image": "https://images.unsplash.com/photo-1761971975973-cbb3e59263de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHx5b2dhJTIwc3R1ZGlvJTIwc3VubGlnaHR8ZW58MHx8fHwxNzc0NjAzMTA3fDA&ixlib=rb-4.1.0&q=85",
+    "about_image": "https://images.pexels.com/photos/6193612/pexels-photo-6193612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "services_overview": "https://images.pexels.com/photos/4056612/pexels-photo-4056612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "instructor_profile": "https://images.unsplash.com/photo-1622587133988-70349a7942c8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwc3R1ZGlvJTIwc3VubGlnaHR8ZW58MHx8fHwxNzc0NjAzMTA3fDA&ixlib=rb-4.1.0&q=85",
+    "gallery_images": [
+      "https://images.unsplash.com/photo-1612215033461-f2185845eb4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/5201529/pexels-photo-5201529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1663820108880-74a416c819da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/4908556/pexels-photo-4908556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "tech_instructions": {
+    "styling": "Use pure HTML/Tailwind for structural layouts to preserve the asymmetrical, artful intent. Shadcn is allowed for functional components (Forms, Dropdowns), but MUST be heavily customized to remove the 'SaaS' look. Update tailwind.config.js with the provided color hex codes.",
+    "dependencies_to_install": [
+      "framer-motion",
+      "@studio-freight/lenis",
+      "lucide-react",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "testing": "All interactive elements (buttons, links, form inputs) MUST include a 'data-testid' attribute (e.g., data-testid='hero-cta-button')."
+  }
+}
