@@ -183,6 +183,7 @@ function HeroSection() {
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ repeat: Infinity, duration: 2.2 }}
+                whileHover={{ y: 0 }}
                 className="w-10 h-10 rounded-full border border-sand/70 flex items-center justify-center ml-1 cursor-pointer hover:bg-beige/50 transition-colors"
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
                 data-testid="hero-scroll-down"
