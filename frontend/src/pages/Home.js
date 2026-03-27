@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
-import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Heart, Users, Sparkles, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
+import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
 
 const HERO_FIGURE = 'https://static.prod-images.emergentagent.com/jobs/61feb699-51cc-4bfa-a386-0e8aa87c4f6b/images/94d9ca8fe41176d5504c5eda0812896ed5d8b81e44caaad6c07ce30685ae9d57.png';
 const WEIGHT_IMG = 'https://images.pexels.com/photos/4056612/pexels-photo-4056612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
@@ -29,10 +29,25 @@ const testimonials = [
   { name: 'Anita D.', text: 'Such a peaceful, warm environment. The Ayurveda sessions combined with yoga have genuinely improved my digestion and sleep.', program: 'Ayurveda & Yoga' },
 ];
 
-const whyUs = [
-  { icon: Users, title: 'Small, Personalized Batches', desc: 'We keep our batches small so every member receives focused guidance and meaningful progress.' },
-  { icon: Heart, title: 'Holistic Approach', desc: 'We go beyond physical fitness \u2013 combining yoga with Ayurveda, acupressure, and marma therapy for complete well-being.' },
-  { icon: Sparkles, title: 'Natural & Long-Term Results', desc: 'Our methods are rooted in ancient wisdom and modern understanding \u2013 building habits, not dependency.' },
+const whyUsCards = [
+  { 
+    category: 'Personalized',
+    title: 'Small, Personalized Batches', 
+    desc: 'We keep our batches small so every member receives focused guidance and meaningful progress. No student is ever just a face in the crowd.',
+    image: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHw0fHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
+  },
+  { 
+    category: 'Holistic',
+    title: 'Complete Mind-Body Approach', 
+    desc: 'We go beyond physical fitness \u2013 combining yoga with Ayurveda, acupressure, and marma therapy for complete well-being that addresses body, mind, and spirit.',
+    image: 'https://images.unsplash.com/photo-1758274539654-23fa349cc090?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
+  },
+  { 
+    category: 'Sustainable',
+    title: 'Natural & Long-Term Results', 
+    desc: 'Our methods are rooted in ancient wisdom and modern understanding \u2013 building habits, not dependency. Real transformation that lasts a lifetime.',
+    image: 'https://images.unsplash.com/photo-1758274525911-402f99afec14?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
+  },
 ];
 
 function HeroSection() {
@@ -315,56 +330,121 @@ function WeightLossSection() {
 
 function WhyUsSection() {
   return (
-    <section data-testid="why-us-section" className="py-20 lg:py-24 bg-beige/30 relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6">
-        <AnimatedSection className="text-center mb-16">
-          <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal">Why Ranjana Yoga Studio?</h2>
-        </AnimatedSection>
+    <section data-testid="why-us-section" className="bg-beige/30 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          {/* LEFT COLUMN - Sticky */}
+          <div className="lg:sticky lg:top-28 lg:self-start py-16 lg:py-24">
+            <AnimatedSection>
+              <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft/70 mb-5">Why Us</p>
+              <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-[3.5rem] font-normal tracking-tight text-charcoal leading-[1.05] mb-8">
+                Why Ranjana<br />Yoga Studio?
+              </h2>
+              <p className="font-jost text-sm text-taupe leading-relaxed mb-10 max-w-sm">
+                We create a space where every individual can slow down, reconnect, and rebuild through ancient healing traditions.
+              </p>
+              <Link
+                to="/services"
+                data-testid="why-us-cta"
+                className="inline-flex font-jost text-sm font-medium tracking-[0.06em] px-8 py-3 rounded-full border border-sand text-charcoal hover:bg-beige transition-all duration-300"
+              >
+                explore services
+              </Link>
+            </AnimatedSection>
+          </div>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {whyUs.map((item) => {
-            const Icon = item.icon;
-            return (
-              <StaggerItem key={item.title} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-blush/30 flex items-center justify-center mx-auto mb-5">
-                  <Icon size={24} className="text-gold-soft" strokeWidth={1.5} />
+          {/* RIGHT COLUMN - Scrolling cards */}
+          <div className="py-10 lg:py-20 space-y-16 lg:space-y-20">
+            {whyUsCards.map((card, i) => (
+              <FadeIn key={card.title} delay={i * 0.1}>
+                <div data-testid={`why-us-card-${i}`}>
+                  <div className="overflow-hidden rounded-xl mb-5">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-56 sm:h-72 lg:h-80 object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <p className="font-jost text-xs tracking-[0.15em] uppercase text-taupe mb-2">{card.category}</p>
+                  <h3 className="font-cormorant text-2xl sm:text-3xl font-normal tracking-tight text-charcoal mb-3">{card.title}</h3>
+                  <p className="font-jost text-sm text-taupe leading-relaxed max-w-lg">{card.desc}</p>
                 </div>
-                <h3 className="font-cormorant text-xl font-semibold text-charcoal mb-3">{item.title}</h3>
-                <p className="font-jost text-sm text-taupe leading-relaxed">{item.desc}</p>
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
 function TestimonialsSection() {
+  const [active, setActive] = useState(0);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
+
   return (
-    <section data-testid="testimonials-section" className="py-20 lg:py-24 bg-ivory relative overflow-hidden">
-      <div className="blob-pink top-10 right-0" />
-      <div className="max-w-6xl mx-auto px-6">
-        <AnimatedSection className="text-center mb-16">
-          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Testimonials</p>
-          <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal">What Our Members Say</h2>
+    <section ref={sectionRef} data-testid="testimonials-section" className="relative overflow-hidden bg-charcoal text-ivory">
+      {/* Parallax background image */}
+      <motion.div style={{ y: imgY }} className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1758274535860-93a116aa7897?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85"
+          alt="Yoga background"
+          className="w-full h-[130%] object-cover opacity-20"
+        />
+      </motion.div>
+      <div className="absolute inset-0 bg-charcoal/70 z-[1]" />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-32">
+        {/* Header */}
+        <AnimatedSection className="mb-16">
+          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft/60 mb-3">Testimonials</p>
+          <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-ivory/90">What Our Members Say</h2>
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <StaggerItem key={t.name}>
-              <div className="bg-beige border border-sand rounded-2xl p-8 h-full flex flex-col" data-testid={`testimonial-${t.name.toLowerCase().replace(/[\s.]/g, '-')}`}>
-                <Quote size={24} className="text-gold-pale mb-4" strokeWidth={1.5} />
-                <p className="font-jost text-sm text-charcoal leading-relaxed flex-1 mb-6">"{t.text}"</p>
+        {/* Active testimonial */}
+        <div className="min-h-[280px] relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              data-testid={`testimonial-active`}
+            >
+              <Quote size={40} className="text-gold-soft/30 mb-6" strokeWidth={1} />
+              <blockquote className="font-cormorant text-2xl sm:text-3xl lg:text-4xl font-light text-ivory/90 leading-[1.3] mb-8 max-w-3xl">
+                "{testimonials[active].text}"
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-px bg-gold-soft/40" />
                 <div>
-                  <div className="w-8 h-px bg-gold-soft/40 mb-3" />
-                  <p className="font-cormorant text-lg font-semibold text-charcoal">{t.name}</p>
-                  <p className="font-jost text-xs text-taupe">{t.program}</p>
+                  <p className="font-jost text-sm font-medium text-ivory/80 tracking-wide">{testimonials[active].name}</p>
+                  <p className="font-jost text-xs text-ivory/40">{testimonials[active].program}</p>
                 </div>
               </div>
-            </StaggerItem>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Navigation dots */}
+        <div className="flex items-center gap-3 mt-12" data-testid="testimonial-dots">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              data-testid={`testimonial-dot-${i}`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                i === active ? 'w-8 bg-gold-soft' : 'bg-ivory/20 hover:bg-ivory/40'
+              }`}
+            />
           ))}
-        </StaggerContainer>
+          <span className="font-jost text-xs text-ivory/30 ml-4">
+            {String(active + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
+          </span>
+        </div>
       </div>
     </section>
   );
