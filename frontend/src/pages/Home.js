@@ -3,9 +3,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
-import { ArrowRight, Leaf, Waves, Plus, Heart, Users, Sparkles, Star, Quote } from 'lucide-react';
+import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Heart, Users, Sparkles, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
 
-const HERO_FIGURE = 'https://customer-assets.emergentagent.com/job_creative-web-build-4/artifacts/rnrh1gjm_yoga.png';
+const HERO_FIGURE = 'https://static.prod-images.emergentagent.com/jobs/61feb699-51cc-4bfa-a386-0e8aa87c4f6b/images/94d9ca8fe41176d5504c5eda0812896ed5d8b81e44caaad6c07ce30685ae9d57.png';
 const WEIGHT_IMG = 'https://images.pexels.com/photos/4056612/pexels-photo-4056612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
 const GALLERY_IMAGES = [
   'https://images.unsplash.com/photo-1612215033461-f2185845eb4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85',
@@ -39,148 +39,160 @@ function HeroSection() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
 
-  // Layer 1: Background decorative text (slowest - furthest away)
-  const bgTextY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
-  const bgTextOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  // Layer 1: Background decorative elements (slowest)
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '6%']);
+  const bgTextY = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
-  // Layer 2: Figure (medium speed - mid-ground)
+  // Layer 2: Figure (medium parallax)
   const figureY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
-  const figureScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.02]);
+  const figureOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
-  // Layer 3: Foreground text & CTA (fastest - closest to viewer)
-  const fgTextY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const fgOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
-
-  // Gold glow behind figure
-  const glowScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.15]);
+  // Layer 3: Text & CTAs (fastest - foreground)
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '40%']);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
-    <section ref={ref} data-testid="hero-section" className="relative h-screen overflow-hidden bg-[#1a1714]">
-      {/* === LAYER 1: Background atmosphere (slowest parallax) === */}
-      <motion.div style={{ y: bgTextY, opacity: bgTextOpacity }} className="absolute inset-0 z-0">
-        {/* Radial warm glow behind figure */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <motion.div
-            className="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] rounded-full"
-            style={{ scale: glowScale, background: 'radial-gradient(circle, rgba(201,168,76,0.12) 0%, rgba(242,196,206,0.06) 40%, transparent 70%)' }}
-          />
-        </div>
-        {/* Large decorative background word */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <span className="font-cormorant text-[12rem] sm:text-[16rem] lg:text-[22rem] font-light tracking-tight text-ivory/[0.03] leading-none">
-            Balance
-          </span>
-        </div>
-        {/* Thin gold decorative lines */}
-        <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none">
-          <div className="max-w-6xl mx-auto px-10 flex items-center justify-between">
-            <div className="w-px h-40 bg-gradient-to-b from-transparent via-gold-soft/20 to-transparent" />
-            <div className="w-px h-40 bg-gradient-to-b from-transparent via-gold-soft/20 to-transparent" />
-          </div>
-        </div>
+    <section ref={ref} data-testid="hero-section" className="relative h-screen overflow-hidden bg-ivory">
+
+      {/* === LAYER 1: RICH BACKGROUND (slowest parallax) === */}
+      <motion.div style={{ y: bgY, opacity: bgOpacity }} className="absolute inset-0 z-0">
+        {/* Atmospheric gradient blobs */}
+        <div className="absolute top-[5%] right-[15%] w-[500px] h-[500px] rounded-full opacity-25" style={{
+          background: 'radial-gradient(circle, rgba(242,196,206,0.4) 0%, transparent 70%)'
+        }} />
+        <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] rounded-full opacity-20" style={{
+          background: 'radial-gradient(circle, rgba(237,216,154,0.35) 0%, transparent 70%)'
+        }} />
+        <div className="absolute top-[30%] left-[40%] w-[600px] h-[600px] rounded-full opacity-10" style={{
+          background: 'radial-gradient(circle, rgba(214,228,235,0.5) 0%, transparent 70%)'
+        }} />
+
+        {/* Decorative gold circle outlines */}
+        <div className="absolute top-[8%] right-[8%] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] rounded-full border border-gold-soft/[0.06]" />
+        <div className="absolute top-[12%] right-[12%] w-[250px] h-[250px] lg:w-[380px] lg:h-[380px] rounded-full border border-gold-soft/[0.08]" />
+        <div className="absolute bottom-[15%] left-[3%] w-[200px] h-[200px] rounded-full border border-blush/[0.1]" />
+
+        {/* Thin gold horizontal lines */}
+        <div className="absolute top-[25%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-soft/[0.07] to-transparent" />
+        <div className="absolute top-[75%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-soft/[0.05] to-transparent" />
+
+        {/* Vertical thin gold lines on sides */}
+        <div className="absolute top-[15%] bottom-[15%] left-[6%] w-px bg-gradient-to-b from-transparent via-gold-soft/[0.06] to-transparent" />
+        <div className="absolute top-[15%] bottom-[15%] right-[6%] w-px bg-gradient-to-b from-transparent via-gold-soft/[0.06] to-transparent" />
+
+        {/* Small lotus motif top-right */}
+        <svg className="absolute top-[18%] right-[18%] w-16 h-16 text-gold-soft/[0.08]" viewBox="0 0 100 100" fill="none">
+          <path d="M50 10 C50 10, 25 40, 50 75 C75 40, 50 10, 50 10Z" fill="currentColor"/>
+          <path d="M25 50 C25 50, 45 30, 50 65 C55 30, 75 50, 75 50" fill="currentColor" opacity="0.6"/>
+        </svg>
       </motion.div>
 
-      {/* === LAYER 2: Figure (medium parallax) === */}
+      {/* === LARGE FADED BACKGROUND TEXT (parallax layer 1.5) === */}
       <motion.div
-        style={{ y: figureY, scale: figureScale }}
+        style={{ y: bgTextY, opacity: bgOpacity }}
+        className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none overflow-hidden"
+      >
+        <span className="font-cormorant text-[10rem] sm:text-[14rem] md:text-[18rem] lg:text-[24rem] xl:text-[28rem] font-light tracking-tight text-charcoal/[0.03] leading-none whitespace-nowrap">
+          Balance
+        </span>
+      </motion.div>
+
+      {/* === LAYER 2: CENTERED FIGURE (mid-ground parallax) === */}
+      <motion.div
+        style={{ y: figureY, opacity: figureOpacity }}
         className="absolute inset-0 z-10 flex items-end justify-center pointer-events-none"
       >
-        <img
-          src={HERO_FIGURE}
-          alt="Yoga meditation pose"
-          className="w-auto h-[50vh] sm:h-[65vh] lg:h-[80vh] object-contain object-bottom max-w-none select-none"
-          data-testid="hero-figure"
-        />
+        <div className="relative">
+          <img
+            src={HERO_FIGURE}
+            alt="Yoga meditation pose"
+            className="w-auto h-[62vh] sm:h-[72vh] lg:h-[88vh] object-contain object-bottom max-w-none select-none block"
+            data-testid="hero-figure"
+          />
+          {/* Edge faders - precisely on the image boundaries */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            boxShadow: 'inset 0 -30px 60px 30px #FDF8F2, inset 0 40px 80px 40px #FDF8F2, inset 60px 0 80px 30px #FDF8F2, inset -60px 0 80px 30px #FDF8F2'
+          }} />
+        </div>
       </motion.div>
 
-      {/* === LAYER 3: Foreground text & CTA (fastest parallax) === */}
+      {/* === LAYER 3: TEXT & CTAs (foreground, fastest parallax) === */}
       <motion.div
-        style={{ y: fgTextY, opacity: fgOpacity }}
-        className="absolute inset-0 z-20 flex items-start lg:items-center justify-center pointer-events-none pt-24 lg:pt-0"
+        style={{ y: textY, opacity: textOpacity }}
+        className="absolute inset-0 z-20 pointer-events-none"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Left text block */}
-            <div className="text-center lg:text-left pointer-events-auto">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="font-jost text-xs tracking-[0.25em] uppercase text-gold-soft/80 mb-5"
-              >
-                Ranjana Yoga Studio
-              </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 35 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.9 }}
-                className="font-cormorant text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-ivory/95 leading-[1.05]"
-              >
-                Start Your<br />
-                <span className="text-blush">Journey</span> to<br />
-                Inner Peace
-              </motion.h1>
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: 80 }}
-                transition={{ delay: 1, duration: 0.6 }}
-                className="h-px bg-gold-soft/40 mt-6 mb-5 mx-auto lg:mx-0"
-              />
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                className="font-jost text-sm sm:text-base text-ivory/50 max-w-md mx-auto lg:mx-0 leading-relaxed"
-              >
-                A holistic wellness space where yoga meets Ayurveda, acupressure, and the ancient wisdom of marma therapy.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.8 }}
-                className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mt-8"
-              >
-                <Link
-                  to="/services"
-                  data-testid="hero-explore-classes"
-                  className="font-jost text-sm font-medium tracking-[0.08em] px-8 py-3 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
-                >
-                  Explore Classes
-                </Link>
-                <Link
-                  to="/contact"
-                  data-testid="hero-book-trial"
-                  className="font-jost text-sm font-medium tracking-[0.08em] px-8 py-3 rounded-full bg-transparent border-[1.5px] border-gold-soft/60 text-gold-soft hover:bg-gold-pale/10 transition-all duration-300"
-                >
-                  Book a Free Trial
-                </Link>
-              </motion.div>
+        <div className="h-full max-w-7xl mx-auto px-6 lg:px-10 flex flex-col justify-end pb-10 lg:pb-12">
+          {/* Label */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            className="font-jost text-[10px] sm:text-xs tracking-[0.25em] uppercase text-gold-soft/70 mb-3 pointer-events-auto"
+          >
+            Ranjana Yoga Studio
+          </motion.p>
+
+          {/* Main headline - shorter, bolder, overlapping figure */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="font-cormorant text-[2.8rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[7rem] xl:text-[8rem] font-normal tracking-tight text-charcoal leading-[0.92] max-w-[85%] sm:max-w-[65%] lg:max-w-[55%] pointer-events-auto"
+          >
+            Inner <span className="text-deep-rose italic">Peace</span><br />
+            Starts Here.
+          </motion.h1>
+
+          {/* Bottom bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.7 }}
+            className="flex items-end justify-between mt-5 lg:mt-8 pointer-events-auto flex-wrap gap-3"
+          >
+            {/* Social icons */}
+            <div className="flex items-center gap-4">
+              <a href="#" className="text-charcoal/30 hover:text-gold-soft transition-colors duration-300" aria-label="Instagram" data-testid="hero-instagram">
+                <Instagram size={18} strokeWidth={1.5} />
+              </a>
+              <a href="#" className="text-charcoal/30 hover:text-gold-soft transition-colors duration-300" aria-label="WhatsApp" data-testid="hero-whatsapp">
+                <MessageCircle size={18} strokeWidth={1.5} />
+              </a>
+              <span className="font-jost text-[10px] tracking-[0.15em] uppercase text-charcoal/20 hidden sm:inline ml-2">
+                @ranjanayogastudio
+              </span>
             </div>
 
-            {/* Right side - intentionally empty to let figure show through */}
-            <div className="hidden lg:block" />
-          </div>
+            {/* CTAs + scroll */}
+            <div className="flex items-center gap-3">
+              <Link
+                to="/contact"
+                data-testid="hero-explore-classes"
+                className="font-jost text-sm font-medium tracking-[0.06em] px-7 py-3 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
+              >
+                get started
+              </Link>
+              <Link
+                to="/services"
+                data-testid="hero-book-trial"
+                className="font-jost text-sm font-medium tracking-[0.06em] px-7 py-3 rounded-full bg-ivory border border-sand text-charcoal hover:bg-beige transition-all duration-300"
+              >
+                view classes
+              </Link>
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ repeat: Infinity, duration: 2.2 }}
+                className="w-10 h-10 rounded-full border border-sand/70 flex items-center justify-center ml-1 cursor-pointer hover:bg-beige/50 transition-colors"
+                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                data-testid="hero-scroll-down"
+              >
+                <ArrowDown size={16} className="text-charcoal/50" strokeWidth={1.5} />
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </motion.div>
-
-      {/* Tagline badge - bottom center, above figure */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30"
-      >
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-px bg-gold-soft/30" />
-          <span className="font-jost text-[11px] tracking-[0.3em] uppercase text-ivory/30">
-            Balance &bull; Heal &bull; Transform
-          </span>
-          <div className="w-8 h-px bg-gold-soft/30" />
-        </div>
-      </motion.div>
-
-      {/* Dark-to-light transition at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-ivory z-30 pointer-events-none" />
     </section>
   );
 }
