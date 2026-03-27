@@ -16,6 +16,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -47,7 +48,9 @@ export default function Navbar() {
                 <path d="M30 55 C30 55, 45 35, 50 65 C55 35, 70 55, 70 55" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.6"/>
                 <circle cx="50" cy="50" r="4" fill="currentColor" opacity="0.5"/>
               </svg>
-              <span className="font-cormorant text-xl lg:text-2xl tracking-tight text-charcoal font-normal">
+              <span className={`font-cormorant text-xl lg:text-2xl tracking-tight font-normal transition-colors duration-500 ${
+                scrolled ? 'text-charcoal' : isHome ? 'text-ivory/90' : 'text-charcoal'
+              }`}>
                 Ranjana Yoga Studio
               </span>
             </Link>
@@ -59,10 +62,10 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   data-testid={`nav-${link.name.toLowerCase()}`}
-                  className={`font-jost text-[15px] tracking-wide transition-colors duration-300 hover:text-deep-rose relative ${
+                  className={`font-jost text-[15px] tracking-wide transition-colors duration-300 relative ${
                     location.pathname === link.path
-                      ? 'text-charcoal nav-link-active'
-                      : 'text-taupe'
+                      ? scrolled ? 'text-charcoal nav-link-active' : isHome ? 'text-ivory nav-link-active' : 'text-charcoal nav-link-active'
+                      : scrolled ? 'text-taupe hover:text-deep-rose' : isHome ? 'text-ivory/60 hover:text-ivory' : 'text-taupe hover:text-deep-rose'
                   }`}
                 >
                   {link.name}
@@ -80,7 +83,9 @@ export default function Navbar() {
             {/* Mobile toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden text-charcoal p-2"
+              className={`lg:hidden p-2 transition-colors duration-500 ${
+                scrolled ? 'text-charcoal' : isHome ? 'text-ivory' : 'text-charcoal'
+              }`}
               data-testid="mobile-menu-toggle"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
