@@ -30,21 +30,21 @@ const testimonials = [
 ];
 
 const whyUsCards = [
-  { 
+  {
     category: 'Personalized',
-    title: 'Small, Personalized Batches', 
+    title: 'Small, Personalized Batches',
     desc: 'We keep our batches small so every member receives focused guidance and meaningful progress. No student is ever just a face in the crowd.',
     image: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHw0fHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
   },
-  { 
+  {
     category: 'Holistic',
-    title: 'Complete Mind-Body Approach', 
+    title: 'Complete Mind-Body Approach',
     desc: 'We go beyond physical fitness \u2013 combining yoga with Ayurveda, acupressure, and marma therapy for complete well-being that addresses body, mind, and spirit.',
     image: 'https://images.unsplash.com/photo-1758274539654-23fa349cc090?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
   },
-  { 
+  {
     category: 'Sustainable',
-    title: 'Natural & Long-Term Results', 
+    title: 'Natural & Long-Term Results',
     desc: 'Our methods are rooted in ancient wisdom and modern understanding \u2013 building habits, not dependency. Real transformation that lasts a lifetime.',
     image: 'https://images.unsplash.com/photo-1758274525911-402f99afec14?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
   },
@@ -98,8 +98,8 @@ function HeroSection() {
 
         {/* Small lotus motif top-right */}
         <svg className="absolute top-[18%] right-[18%] w-16 h-16 text-gold-soft/[0.08]" viewBox="0 0 100 100" fill="none">
-          <path d="M50 10 C50 10, 25 40, 50 75 C75 40, 50 10, 50 10Z" fill="currentColor"/>
-          <path d="M25 50 C25 50, 45 30, 50 65 C55 30, 75 50, 75 50" fill="currentColor" opacity="0.6"/>
+          <path d="M50 10 C50 10, 25 40, 50 75 C75 40, 50 10, 50 10Z" fill="currentColor" />
+          <path d="M25 50 C25 50, 45 30, 50 65 C55 30, 75 50, 75 50" fill="currentColor" opacity="0.6" />
         </svg>
       </motion.div>
 
@@ -330,7 +330,7 @@ function WeightLossSection() {
 
 function WhyUsSection() {
   return (
-    <section data-testid="why-us-section" className="bg-beige/30 relative overflow-hidden">
+    <section data-testid="why-us-section" className="bg-beige/30 relative">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* LEFT COLUMN - Sticky */}
@@ -436,9 +436,8 @@ function TestimonialsSection() {
               key={i}
               onClick={() => setActive(i)}
               data-testid={`testimonial-dot-${i}`}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === active ? 'w-8 bg-gold-soft' : 'bg-ivory/20 hover:bg-ivory/40'
-              }`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-gold-soft' : 'bg-ivory/20 hover:bg-ivory/40'
+                }`}
             />
           ))}
           <span className="font-jost text-xs text-ivory/30 ml-4">

@@ -102,6 +102,72 @@ function ServiceBlock({ service, reverse }) {
   );
 }
 
+function FeeStructure() {
+  return (
+    <section data-testid="fee-structure" className="py-20 lg:py-24 bg-beige/20 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
+        <AnimatedSection className="text-center mb-16">
+          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Investment in Health</p>
+          <h2 className="font-cormorant text-4xl lg:text-5xl font-light text-charcoal mb-4">Pricing & Plans</h2>
+          <p className="font-jost text-base text-taupe leading-relaxed max-w-xl mx-auto">
+            Transparent pricing for our transformative programs. Choose the path that aligns with your wellness goals.
+          </p>
+        </AnimatedSection>
+
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+          {/* General Fees */}
+          <StaggerItem>
+            <div className="bg-ivory border border-gold-soft/30 rounded-2xl p-8 lg:p-10 h-full relative shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1">
+              <h3 className="font-cormorant text-2xl font-medium text-charcoal mb-6 border-b border-sand/50 pb-4">
+                💰 General Fee Structure
+              </h3>
+              <ul className="space-y-5">
+                <li className="flex justify-between items-center border-b border-sand/20 pb-4">
+                  <span className="font-jost text-[15px] text-charcoal font-medium">Offline Classes</span>
+                  <span className="font-cormorant text-xl text-gold-soft font-semibold tracking-wide">₹1800<span className="text-sm text-taupe font-jost font-normal tracking-wide">/mo</span></span>
+                </li>
+                <li className="flex justify-between items-center border-b border-sand/20 pb-4">
+                  <span className="font-jost text-[15px] text-charcoal font-medium">Online Group Classes</span>
+                  <span className="font-cormorant text-xl text-gold-soft font-semibold tracking-wide">₹1500<span className="text-sm text-taupe font-jost font-normal tracking-wide">/mo</span></span>
+                </li>
+                <li className="flex justify-between items-center pt-2">
+                  <span className="font-jost text-[15px] text-charcoal font-medium flex flex-col">
+                    Online Personalized
+                    <span className="text-xs text-taupe font-normal mt-1 italic tracking-wide">Limited Seats</span>
+                  </span>
+                  <span className="font-cormorant text-xl text-gold-soft font-semibold tracking-wide">₹2500<span className="text-sm text-taupe font-jost font-normal tracking-wide">/mo</span></span>
+                </li>
+              </ul>
+            </div>
+          </StaggerItem>
+
+          {/* Weight Loss Programs */}
+          <StaggerItem>
+            <div className="bg-gold-pale/10 border border-gold-soft/50 rounded-2xl p-8 lg:p-10 h-full relative shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1">
+              <h3 className="font-cormorant text-2xl font-medium text-charcoal mb-6 border-b border-gold-soft/30 pb-4">
+                🔥 Weight Loss Programs
+              </h3>
+              <ul className="space-y-5">
+                <li className="flex justify-between items-center border-b border-gold-soft/20 pb-4">
+                  <span className="font-jost text-[15px] text-charcoal font-medium">Group Batch</span>
+                  <span className="font-cormorant text-2xl text-charcoal font-semibold tracking-wide">₹2500<span className="text-sm text-taupe font-jost font-normal tracking-wide">/mo</span></span>
+                </li>
+                <li className="flex justify-between items-center pt-2">
+                  <span className="font-jost text-[15px] text-charcoal font-medium flex flex-col">
+                    Personalized
+                    <span className="text-xs text-taupe font-normal mt-1 italic tracking-wide">1-on-1 Focus</span>
+                  </span>
+                  <span className="font-cormorant text-2xl text-charcoal font-semibold tracking-wide">₹3500<span className="text-sm text-taupe font-jost font-normal tracking-wide">/mo</span></span>
+                </li>
+              </ul>
+            </div>
+          </StaggerItem>
+        </StaggerContainer>
+      </div>
+    </section>
+  );
+}
+
 export default function Services() {
   return (
     <div data-testid="services-page">
@@ -124,9 +190,11 @@ export default function Services() {
       {services.map((service, i) => (
         <div key={service.id}>
           <ServiceBlock service={service} reverse={i % 2 !== 0} />
-          {i < services.length - 1 && <LotusDivider />}
+          <LotusDivider />
         </div>
       ))}
+
+      <FeeStructure />
     </div>
   );
 }

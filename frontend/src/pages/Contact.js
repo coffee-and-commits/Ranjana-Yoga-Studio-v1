@@ -5,12 +5,12 @@ import { MapPin, Phone, Mail, MessageCircle, Instagram, Clock, Send, CheckCircle
 import { motion, AnimatePresence } from 'framer-motion';
 
 const contactInfo = [
-  { icon: MapPin, label: 'Address', value: '[Studio Address], [City], [PIN]' },
-  { icon: Phone, label: 'Phone', value: '[Phone Number]' },
+  { icon: MapPin, label: 'Address', value: 'Badrish colony, Lane no 6, House no 168, Near Ambiwala Gurudwara, Dharmpur (Danda), Dehradun' },
+  { icon: Phone, label: 'Phone', value: '7409508399, 7452024056', href: 'tel:+917409508399' },
   { icon: Mail, label: 'Email', value: '[Email Address]' },
   { icon: MessageCircle, label: 'WhatsApp', value: '[WhatsApp Number]' },
-  { icon: Instagram, label: 'Instagram', value: '@ranjanayogastudio' },
-  { icon: Clock, label: 'Studio Hours', value: 'Morning: 6 AM - 9 AM | Evening: 5 PM - 8 PM' },
+  { icon: Instagram, label: 'Instagram', value: '@yogicsoul_ranj', href: 'https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw' },
+  { icon: Clock, label: 'Studio Hours', value: 'Morning: 5.30 AM - 9.15 AM | Evening: 5.30 PM - 8.30 PM' },
 ];
 
 const interests = [
@@ -81,7 +81,13 @@ export default function Contact() {
                         </div>
                         <div>
                           <p className="font-jost text-xs tracking-[0.1em] uppercase text-taupe mb-1">{item.label}</p>
-                          <p className="font-jost text-sm text-charcoal">{item.value}</p>
+                          {item.href ? (
+                            <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="font-jost text-sm text-charcoal hover:text-gold-soft transition-colors inline-block">
+                              {item.value}
+                            </a>
+                          ) : (
+                            <p className="font-jost text-sm text-charcoal">{item.value}</p>
+                          )}
                         </div>
                       </div>
                     );

@@ -22,8 +22,8 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <svg width="24" height="24" viewBox="0 0 100 100" fill="none" className="text-gold-soft">
-                <path d="M50 5 C50 5, 25 35, 50 70 C75 35, 50 5, 50 5Z" fill="currentColor" opacity="0.4"/>
-                <path d="M50 10 C50 10, 15 50, 50 85 C85 50, 50 10, 50 10Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+                <path d="M50 5 C50 5, 25 35, 50 70 C75 35, 50 5, 50 5Z" fill="currentColor" opacity="0.4" />
+                <path d="M50 10 C50 10, 15 50, 50 85 C85 50, 50 10, 50 10Z" fill="none" stroke="currentColor" strokeWidth="2" />
               </svg>
               <span className="font-cormorant text-xl text-ivory font-normal">Ranjana Yoga Studio</span>
             </div>
@@ -59,11 +59,17 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-gold-soft mt-0.5 shrink-0" />
-                <span className="font-jost text-sm text-ivory/50">[Studio Address], [City], [PIN]</span>
+                <span className="font-jost text-sm text-ivory/50">Badrish colony,
+                  Lane no 6,
+                  House no 168,
+                  Near Ambiwala Gurudwara,
+                  Dharmpur (Danda),
+                  Dehradun
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-gold-soft shrink-0" />
-                <span className="font-jost text-sm text-ivory/50">[Phone Number]</span>
+                <span className="font-jost text-sm text-ivory/50">7409508399, 7452024056</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-gold-soft shrink-0" />
@@ -76,12 +82,12 @@ export default function Footer() {
           <div>
             <h4 className="font-cormorant text-lg text-ivory mb-6">Studio Hours</h4>
             <div className="font-jost text-sm text-ivory/50 space-y-2 mb-6">
-              <p>Morning: 6:00 AM - 9:00 AM</p>
-              <p>Evening: 5:00 PM - 8:00 PM</p>
+              <p>Morning: 5:00 AM - 9:15 AM</p>
+              <p>Evening: 5:30 PM - 8:30 PM</p>
               <p>Monday - Saturday</p>
             </div>
             <div className="flex items-center gap-4">
-              <a href="#" data-testid="footer-instagram" className="text-ivory/40 hover:text-gold-soft transition-colors duration-300" aria-label="Instagram">
+              <a href="https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw" data-testid="footer-instagram" className="text-ivory/40 hover:text-gold-soft transition-colors duration-300" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
               <a href="#" data-testid="footer-whatsapp" className="text-ivory/40 hover:text-gold-soft transition-colors duration-300" aria-label="WhatsApp">
