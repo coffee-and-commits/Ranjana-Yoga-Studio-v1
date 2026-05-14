@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
+import { FeesBatchDetails } from '@/components/FeesBatchDetails';
 import { LotusDivider } from '@/components/LotusDecor';
 import { ArrowRight, Info } from 'lucide-react';
 
 const dailySlots = [
-  { time: '5:00 AM - 6:00 AM', class: 'Personalized Batch', level: 'Offline + Online', duration: '60 min' },
-  { time: '6:00 AM - 7:00 AM', class: 'Weight Loss', level: 'Online Group', duration: '60 min' },
-  { time: '7:00 AM - 8:00 AM', class: 'Personalized Batch', level: 'Offline + Online', duration: '60 min' },
-  { time: '8:15 AM - 9:15 AM', class: 'Weight Loss', level: 'Offline Only', duration: '60 min' },
-  { time: '5:30 PM - 6:30 PM', class: 'Kids Batch', level: 'Offline Only', duration: '60 min' },
-  { time: '6:30 PM - 7:30 PM', class: 'Personalized Batch', level: 'Offline + Online', duration: '60 min' },
-  { time: '7:30 PM - 8:30 PM', class: 'Weight Loss', level: 'Group Batch', duration: '60 min' },
+  { time: '5:00 AM – 6:00 AM', class: 'Personalized Batches', level: 'Small Groups | Offline + Online', duration: '\u2014' },
+  { time: '7:00 AM – 8:00 AM', class: 'Personalized Batches', level: 'Small Groups | Offline + Online', duration: '\u2014' },
+  { time: '6:40 PM – 7:40 PM', class: 'Personalized Batches', level: 'Small Groups | Offline + Online', duration: '\u2014' },
+  { time: '6:00 AM – 7:00 AM', class: 'Weight Loss Batch', level: 'Online Group', duration: '\u2014' },
+  { time: '8:10 AM – 9:15 AM', class: 'Weight Loss Batch', level: 'Offline Batch', duration: '\u2014' },
+  { time: '5:30 PM – 6:30 PM', class: 'Kids Batch', level: 'Offline Only', duration: '\u2014' },
 ];
 
 const schedule = [
@@ -26,10 +26,10 @@ const schedule = [
 ];
 
 const levelColors = {
-  'Offline + Online': 'bg-blush/40 text-charcoal',
+  'Small Groups | Offline + Online': 'bg-blush/40 text-charcoal',
   'Online Group': 'bg-gold-pale/40 text-charcoal',
+  'Offline Batch': 'bg-beige text-charcoal',
   'Offline Only': 'bg-beige text-charcoal',
-  'Group Batch': 'bg-sand/40 text-charcoal',
   '\u2014': 'bg-ivory text-taupe',
 };
 
@@ -125,6 +125,8 @@ export default function Schedule() {
           </div>
         </div>
       </section>
+
+      <FeesBatchDetails className="bg-beige/20" />
 
       <LotusDivider />
 

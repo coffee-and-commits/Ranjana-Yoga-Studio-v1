@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
+import { FeesBatchDetails } from '@/components/FeesBatchDetails';
 import { LotusDivider } from '@/components/LotusDecor';
 import { ArrowRight, Check } from 'lucide-react';
 
@@ -195,6 +196,8 @@ export default function Services() {
       ))}
 
       <FeeStructure />
+
+      <FeesBatchDetails className="bg-ivory" />
     </div>
   );
 }

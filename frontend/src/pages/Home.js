@@ -5,8 +5,8 @@ import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/compon
 import { LotusDivider } from '@/components/LotusDecor';
 import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
 
-const HERO_FIGURE = 'https://static.prod-images.emergentagent.com/jobs/61feb699-51cc-4bfa-a386-0e8aa87c4f6b/images/94d9ca8fe41176d5504c5eda0812896ed5d8b81e44caaad6c07ce30685ae9d57.png';
-const WEIGHT_IMG = 'https://images.pexels.com/photos/4056612/pexels-photo-4056612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
+const HERO_FIGURE = '/images/image-1.jpeg';
+const WEIGHT_IMG = '/images/image-2.jpeg';
 const GALLERY_IMAGES = [
   'https://images.unsplash.com/photo-1612215033461-f2185845eb4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85',
   'https://images.pexels.com/photos/5201529/pexels-photo-5201529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
@@ -49,6 +49,19 @@ const whyUsCards = [
     image: 'https://images.unsplash.com/photo-1758274525911-402f99afec14?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
   },
 ];
+
+// inset  offset-x  offset-y  blur  spread  color
+// offset-x: 0 = no horizontal shift
+// offset-y: negative = shadow origin at bottom (fades bottom edge)
+//           positive = shadow origin at top    (fades top edge)
+// offset-x: positive = shadow origin at left  (fades left edge)
+//           negative = shadow origin at right  (fades right edge)
+const FIGURE_EDGE_FADER = [
+  'inset   0    -30px  60px  30px  #FDF8F2', // bottom edge
+  'inset   0     40px  80px  40px  #FDF8F2', // top edge
+  'inset  10px    0    80px  30px  #FDF8F2', // left edge
+  'inset -60px    0    80px  30px  #FDF8F2', // right edge
+].join(', ');
 
 function HeroSection() {
   const ref = useRef(null);
@@ -127,7 +140,7 @@ function HeroSection() {
           />
           {/* Edge faders - precisely on the image boundaries */}
           <div className="absolute inset-0 pointer-events-none" style={{
-            boxShadow: 'inset 0 -30px 60px 30px #FDF8F2, inset 0 40px 80px 40px #FDF8F2, inset 60px 0 80px 30px #FDF8F2, inset -60px 0 80px 30px #FDF8F2'
+            boxShadow: FIGURE_EDGE_FADER
           }} />
         </div>
       </motion.div>
@@ -143,7 +156,7 @@ function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="font-jost text-[10px] sm:text-xs tracking-[0.25em] uppercase text-gold-soft/70 mb-3 pointer-events-auto"
+            className="font-jost text-[10px] sm:text-xs md:text-lg tracking-[0.25em] uppercase text-gold-soft/70 mb-3 pointer-events-auto"
           >
             Ranjana Yoga Studio
           </motion.p>
@@ -153,10 +166,10 @@ function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="font-cormorant text-[2.8rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[7rem] xl:text-[8rem] font-normal tracking-tight text-charcoal leading-[0.92] max-w-[85%] sm:max-w-[65%] lg:max-w-[55%] pointer-events-auto"
+            className="font-cormorant text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-tight text-charcoal leading-[0.92] max-w-[85%] sm:max-w-[65%] lg:max-w-[55%] pointer-events-auto"
           >
-            Inner <span className="text-deep-rose italic">Peace</span><br />
-            Starts Here.
+            A Space to <span className="text-deep-rose italic">Heal,</span><br />
+            Breathe & <span className="text-deep-rose italic">Transform.</span>
           </motion.h1>
 
           {/* Bottom bar */}
@@ -219,7 +232,7 @@ function StatsSection() {
       <div className="blob-gold top-0 right-0" />
       <div className="max-w-5xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-4">Welcome to Ranjana Yoga Studio</p>
+          <p className="font-jost text-xs md:text-xl font-semibold tracking-[0.2em] uppercase text-gold-soft mb-4">Welcome to Ranjana Yoga Studio</p>
           <p className="font-jost text-base text-taupe max-w-2xl mx-auto leading-relaxed">
             We believe wellness is not a destination &ndash; it is a way of living. At Ranjana Yoga Studio, we create a space where every individual can slow down, reconnect, and rebuild &ndash; through movement, breath, and the healing traditions of yoga and Ayurveda.
           </p>
@@ -227,9 +240,9 @@ function StatsSection() {
 
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {[
-            { value: '200+', label: 'Happy Members' },
-            { value: '10+', label: 'Years of Experience' },
-            { value: 'Small', label: 'Personalized Batches' },
+            { value: '200+', label: 'Lives Transformed' },
+            { value: '5+', label: 'Years of Experience' },
+            { value: 'Small', label: 'Personalized Attension' },
           ].map((stat) => (
             <StaggerItem key={stat.label} className="text-center">
               <p className="font-cormorant text-5xl lg:text-6xl font-light text-charcoal">{stat.value}</p>

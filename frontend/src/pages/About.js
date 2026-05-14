@@ -2,8 +2,8 @@ import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/compon
 import { LotusDivider } from '@/components/LotusDecor';
 import { Award, BookOpen, Heart } from 'lucide-react';
 
-const ABOUT_IMG = 'https://images.pexels.com/photos/6193612/pexels-photo-6193612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
-const INSTRUCTOR_IMG = 'https://images.unsplash.com/photo-1622587133988-70349a7942c8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwc3R1ZGlvJTIwc3VubGlnaHR8ZW58MHx8fHwxNzc0NjAzMTA3fDA&ixlib=rb-4.1.0&q=85';
+const ABOUT_IMG = '/images/image-3.jpeg';
+const INSTRUCTOR_IMG = '/images/image-3.jpg';
 
 const pillars = [
   { num: '01', title: 'Balance', desc: 'Wellness begins when all aspects of your life \u2013 physical, mental, and emotional \u2013 are in harmony.', icon: BookOpen },
@@ -79,14 +79,16 @@ export default function About() {
             <FadeIn direction="right" className="order-2 lg:order-1">
               <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Our Expert</p>
               <h2 className="font-cormorant text-3xl sm:text-4xl font-light tracking-tight text-charcoal mb-6">
-                [Instructor Name]
+                Ranjana Kumain
               </h2>
               <div className="font-jost text-base text-taupe leading-relaxed space-y-4">
                 <p>
-                  A certified yoga instructor with extensive experience in yoga, Ayurveda, acupressure, and marma therapy. Their teaching philosophy is rooted in compassion, patience, and the belief that every body is capable of transformation.
+                  After completing my MBA in HR and working in a multinational company, I felt a deeper calling towards yoga — something that brought real balance and purpose into my life.
+                  What started as a simple practice soon became a passion. I pursued my Master’s in Yoga and completed a 400-hour teacher training in Rishikesh, along with certifications in prenatal and postnatal yoga.
                 </p>
                 <p>
-                  With years of dedicated practice and hundreds of students guided on their wellness journey, they bring a unique blend of traditional knowledge and modern teaching methods to every session.
+                  For the past 3+ years, I have been guiding individuals — especially women — to manage stress, improve health, and feel more confident and balanced in their bodies.
+                  My work has been recognized with an International Women’s Day award, and my yoga practices have also been featured in newspaper articles — reaching and inspiring a wider community.
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -108,7 +110,7 @@ export default function About() {
       </section>
 
       {/* Philosophy Pillars */}
-      <section data-testid="philosophy-section" className="py-20 lg:py-24 bg-ivory relative overflow-hidden">
+      {/* <section data-testid="philosophy-section" className="py-20 lg:py-24 bg-ivory relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection className="text-center mb-16">
             <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal">What We Believe In</h2>
@@ -130,12 +132,12 @@ export default function About() {
             })}
           </StaggerContainer>
         </div>
-      </section>
+      </section> */}
 
       <LotusDivider />
 
       {/* Studio Highlights */}
-      <section data-testid="highlights-section" className="py-20 lg:py-24 bg-beige/30 relative overflow-hidden">
+      {/* <section data-testid="highlights-section" className="py-20 lg:py-24 bg-beige/30 relative overflow-hidden">
         <div className="max-w-3xl mx-auto px-6">
           <AnimatedSection className="text-center mb-12">
             <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal">Studio Highlights</h2>
@@ -152,7 +154,7 @@ export default function About() {
             ))}
           </StaggerContainer>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
