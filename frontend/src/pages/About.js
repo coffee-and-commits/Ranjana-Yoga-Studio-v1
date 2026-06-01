@@ -2,8 +2,8 @@ import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/compon
 import { LotusDivider } from '@/components/LotusDecor';
 import { Award, BookOpen, Heart } from 'lucide-react';
 
-const ABOUT_IMG = '/images/image-3.jpeg';
-const INSTRUCTOR_IMG = '/images/image-3.jpg';
+const ABOUT_IMG = '/images/group-img.jpeg';
+const INSTRUCTOR_IMG = '/images/profile-img.jpeg';
 
 const pillars = [
   { num: '01', title: 'Balance', desc: 'Wellness begins when all aspects of your life \u2013 physical, mental, and emotional \u2013 are in harmony.', icon: BookOpen },
@@ -51,17 +51,17 @@ export default function About() {
             <FadeIn direction="right">
               <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Our Story</p>
               <h2 className="font-cormorant text-3xl sm:text-4xl font-light tracking-tight text-charcoal mb-6">
-                More Than a Studio &ndash; A Wellness Home
+                More Than a Studio &ndash; A Space to Heal
               </h2>
               <div className="font-jost text-base text-taupe leading-relaxed space-y-4">
                 <p>
-                  Ranjana Yoga Studio was founded with one belief: that true health is a harmony of body, mind, and spirit. We began as a small, intimate space &ndash; and that intimacy remains at the heart of everything we do.
+                  Ranjana Yoga Studio was created with a simple belief — true wellness comes from balance in body and mind.
                 </p>
                 <p>
-                  Our carefully structured small batches ensure that no student is ever just a face in the crowd. Every individual who walks through our doors receives attention, care, and a personalized path to wellness.
+                  We offer a calm and supportive space for everyone, with a special focus on helping women manage stress, hormonal imbalances, and overall well-being.
                 </p>
                 <p>
-                  We draw on the ancient sciences of yoga, Ayurveda, acupressure, and marma therapy &ndash; weaving time-tested practices with modern understanding to help you build a life that feels truly balanced.
+                  With small, personalized batches, every individual receives the attention and care they truly need — making each session effective, comfortable, and deeply nurturing.
                 </p>
               </div>
             </FadeIn>

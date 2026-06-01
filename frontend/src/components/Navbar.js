@@ -42,15 +42,10 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
-              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" className="text-gold-soft">
-                <path d="M50 5 C50 5, 25 35, 50 70 C75 35, 50 5, 50 5Z" fill="currentColor" opacity="0.4"/>
-                <path d="M50 10 C50 10, 15 50, 50 85 C85 50, 50 10, 50 10Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-                <path d="M30 55 C30 55, 45 35, 50 65 C55 35, 70 55, 70 55" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.6"/>
-                <circle cx="50" cy="50" r="4" fill="currentColor" opacity="0.5"/>
-              </svg>
-              <span className="font-cormorant text-xl lg:text-2xl tracking-tight text-charcoal font-normal">
+              <img src={'logo.png'} className='h-20'  />
+              {/* <span className="font-cormorant text-xl lg:text-2xl tracking-tight text-charcoal font-normal">
                 Ranjana Yoga Studio
-              </span>
+              </span> */}
             </Link>
 
             {/* Desktop Nav */}

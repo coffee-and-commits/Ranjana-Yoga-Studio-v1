@@ -5,7 +5,7 @@ import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/compon
 import { LotusDivider } from '@/components/LotusDecor';
 import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
 
-const HERO_FIGURE = '/images/image-1.jpeg';
+const HERO_FIGURE = '/images/Hero_Banner.png';
 const WEIGHT_IMG = '/images/image-2.jpeg';
 const GALLERY_IMAGES = [
   'https://images.unsplash.com/photo-1612215033461-f2185845eb4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85',
@@ -20,7 +20,7 @@ const services = [
   { icon: Leaf, title: 'Yoga Classes', desc: 'Beginner & intermediate sessions focused on strength, flexibility, and mindful movement.' },
   { icon: Leaf, title: 'Ayurveda', desc: 'Traditional healing practices that restore balance through natural therapies and lifestyle guidance.' },
   { icon: Waves, title: 'Acupressure', desc: 'Targeted pressure-point therapy to relieve stress, pain, and energy blockages.' },
-  { icon: Plus, title: 'Marma Therapy', desc: 'An ancient Indian energy-healing practice that stimulates vital points for deep restoration.' },
+  // { icon: Plus, title: 'Marma Therapy', desc: 'An ancient Indian energy-healing practice that stimulates vital points for deep restoration.' },
 ];
 
 const testimonials = [
@@ -40,13 +40,13 @@ const whyUsCards = [
     category: 'Holistic',
     title: 'Complete Mind-Body Approach',
     desc: 'We go beyond physical fitness \u2013 combining yoga with Ayurveda, acupressure, and marma therapy for complete well-being that addresses body, mind, and spirit.',
-    image: 'https://images.unsplash.com/photo-1758274539654-23fa349cc090?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
+    image: 'images/image-3.JPEG'
   },
   {
     category: 'Sustainable',
-    title: 'Natural & Long-Term Results',
-    desc: 'Our methods are rooted in ancient wisdom and modern understanding \u2013 building habits, not dependency. Real transformation that lasts a lifetime.',
-    image: 'https://images.unsplash.com/photo-1758274525911-402f99afec14?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
+    title: 'Focus on real results',
+    desc: 'supporting weight loss, strength, and stress relief',
+    image: 'images/image-4.jpeg'
   },
 ];
 
@@ -266,7 +266,7 @@ function ServicesSection() {
           <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal">What We Offer</h2>
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => {
             const Icon = service.icon;
             return (
