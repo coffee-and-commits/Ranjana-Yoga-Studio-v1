@@ -91,13 +91,13 @@ export default function About() {
                   My work has been recognized with an International Women’s Day award, and my yoga practices have also been featured in newspaper articles — reaching and inspiring a wider community.
                 </p>
               </div>
-              <div className="mt-6 flex flex-wrap gap-3">
+              {/* <div className="mt-6 flex flex-wrap gap-3">
                 {['Certified Yoga Instructor', 'Ayurveda Practitioner', 'Marma Therapist'].map((cert) => (
                   <span key={cert} className="font-jost text-xs tracking-wide px-4 py-1.5 rounded-full bg-gold-pale/30 text-charcoal border border-gold-soft/20">
                     {cert}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </FadeIn>
             <FadeIn direction="left" className="order-1 lg:order-2">
               <div className="relative">
