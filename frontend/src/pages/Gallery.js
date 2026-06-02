@@ -5,15 +5,26 @@ import { X, Quote, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1612215033461-f2185845eb4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85', alt: 'Yoga session', tall: true },
-  { src: 'https://images.pexels.com/photos/5201529/pexels-photo-5201529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt: 'Meditation', tall: false },
-  { src: 'https://images.unsplash.com/photo-1663820108880-74a416c819da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85', alt: 'Outdoor yoga', tall: false },
-  { src: 'https://images.pexels.com/photos/4908556/pexels-photo-4908556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt: 'Therapy session', tall: true },
-  { src: 'https://images.pexels.com/photos/6648802/pexels-photo-6648802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt: 'Peaceful meditation', tall: false },
-  { src: 'https://images.unsplash.com/photo-1767611120077-3697335ec748?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHx5b2dhJTIwbWVkaXRhdGlvbiUyMHBlYWNlZnVsJTIwc3R1ZGlvfGVufDB8fHx8MTc3NDYwMzI2OXww&ixlib=rb-4.1.0&q=85', alt: 'Yoga pose', tall: true },
-  { src: 'https://images.pexels.com/photos/6193612/pexels-photo-6193612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt: 'Studio atmosphere', tall: false },
-  { src: 'https://images.unsplash.com/photo-1622587133988-70349a7942c8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwc3R1ZGlvJTIwc3VubGlnaHR8ZW58MHx8fHwxNzc0NjAzMTA3fDA&ixlib=rb-4.1.0&q=85', alt: 'Instructor session', tall: false },
-  { src: 'https://images.unsplash.com/photo-1761971975973-cbb3e59263de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHx5b2dhJTIwc3R1ZGlvJTIwc3VubGlnaHR8ZW58MHx8fHwxNzc0NjAzMTA3fDA&ixlib=rb-4.1.0&q=85', alt: 'Studio sunlight', tall: true },
+  { src: '/images/image-1.jpeg', alt: 'Yoga session', tall: true },
+  { src: '/images/image-2.jpeg', alt: 'Yoga practice', tall: false },
+  { src: '/images/image-3.jpg', alt: 'Yoga pose', tall: false },
+  { src: '/images/image-4.jpeg', alt: 'Yoga class', tall: true },
+  { src: '/images/group-img.jpeg', alt: 'Group yoga session', tall: false },
+  { src: '/images/_1851.JPG.jpeg', alt: 'Studio session', tall: true },
+  { src: '/images/_6505.JPG.jpeg', alt: 'Yoga practice', tall: false },
+  { src: '/images/_6608.JPG.jpeg', alt: 'Studio yoga', tall: false },
+  { src: '/images/_6770.JPG.jpeg', alt: 'Yoga class', tall: true },
+  { src: '/images/_6818.JPG.jpeg', alt: 'Meditation session', tall: false },
+  { src: '/images/_6835.JPG.jpeg', alt: 'Yoga pose', tall: true },
+  { src: '/images/_6846.JPG.jpeg', alt: 'Studio practice', tall: false },
+  { src: '/images/_8037.JPG.jpeg', alt: 'Yoga session', tall: false },
+  { src: '/images/_8594.JPG.jpeg', alt: 'Yoga practice', tall: true },
+  { src: '/images/_8595.JPG.jpeg', alt: 'Studio yoga', tall: false },
+  { src: '/images/_8605.JPG.jpeg', alt: 'Yoga class', tall: false },
+  { src: '/images/_8606.JPG.jpeg', alt: 'Meditation', tall: true },
+  { src: '/images/_8609.JPG.jpeg', alt: 'Studio session', tall: false },
+  { src: '/images/17.jpeg', alt: 'Yoga practice', tall: false },
+  { src: '/images/WhatsApp%20Image%202026-03-25%20at%2012.55.43%20PM.jpeg', alt: 'Studio moment', tall: false },
 ];
 
 const testimonials = [

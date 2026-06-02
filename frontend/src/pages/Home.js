@@ -48,7 +48,7 @@ const whyUsCards = [
   {
     category: 'Sustainable',
     title: 'Focus on real results',
-    desc: 'supporting weight loss, strength, and stress relief',
+    desc: ' supporting weight loss, strength, and stress relief',
     image: 'images/image-4.jpeg'
   },
 ];
