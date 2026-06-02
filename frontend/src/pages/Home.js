@@ -16,10 +16,13 @@ const GALLERY_IMAGES = [
   'https://images.unsplash.com/photo-1767611120077-3697335ec748?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHx5b2dhJTIwbWVkaXRhdGlvbiUyMHBlYWNlZnVsJTIwc3R1ZGlvfGVufDB8fHx8MTc3NDYwMzI2OXww&ixlib=rb-4.1.0&q=85',
 ];
 
+
+
+
 const services = [
-  { icon: Leaf, title: 'Yoga Classes', desc: 'Beginner & intermediate sessions focused on strength, flexibility, and mindful movement.' },
-  { icon: Leaf, title: 'Ayurveda', desc: 'Traditional healing practices that restore balance through natural therapies and lifestyle guidance.' },
-  { icon: Waves, title: 'Acupressure', desc: 'Targeted pressure-point therapy to relieve stress, pain, and energy blockages.' },
+  { icon: Leaf, title: "Yoga for Women's Health & Wellness", desc: "Specially designed yoga practices to support hormonal balance and help manage PCOD, PCOS, thyroid imbalance, irregular periods, and fertility-related concerns — naturally and safely." },
+  { icon: Leaf, title: "Weight Loss Yoga Program", desc: 'Structured yoga sessions focused on fat loss, improving metabolism, and building strength — in a safe and sustainable way.' },
+  { icon: Waves, title: 'Beginner to Intermediate Yoga Classes', desc: 'Step-by-step guided sessions suitable for beginners and intermediate levels, focusing on flexibility, strength, and mindful movement.' },
   // { icon: Plus, title: 'Marma Therapy', desc: 'An ancient Indian energy-healing practice that stimulates vital points for deep restoration.' },
 ];
 
@@ -33,13 +36,13 @@ const whyUsCards = [
   {
     category: 'Personalized',
     title: 'Small, Personalized Batches',
-    desc: 'We keep our batches small so every member receives focused guidance and meaningful progress. No student is ever just a face in the crowd.',
-    image: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHw0fHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85'
+    desc: 'So you get proper attention in every session',
+    image: 'images/17.jpeg'
   },
   {
     category: 'Holistic',
-    title: 'Complete Mind-Body Approach',
-    desc: 'We go beyond physical fitness \u2013 combining yoga with Ayurveda, acupressure, and marma therapy for complete well-being that addresses body, mind, and spirit.',
+    title: 'Beginner-friendly approach',
+    desc: 'Simple, easy-to-follow practices for all levels',
     image: 'images/image-3.JPEG'
   },
   {
@@ -139,9 +142,9 @@ function HeroSection() {
             data-testid="hero-figure"
           />
           {/* Edge faders - precisely on the image boundaries */}
-          <div className="absolute inset-0 pointer-events-none" style={{
+          {/* <div className="absolute inset-0 pointer-events-none" style={{
             boxShadow: FIGURE_EDGE_FADER
-          }} />
+          }} /> */}
         </div>
       </motion.div>
 
@@ -168,8 +171,8 @@ function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="font-cormorant text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-tight text-charcoal leading-[0.92] max-w-[85%] sm:max-w-[65%] lg:max-w-[55%] pointer-events-auto"
           >
-            A Space to <span className="text-deep-rose italic">Heal,</span><br />
-            Breathe & <span className="text-deep-rose italic">Transform.</span>
+            A <span className="text-deep-rose italic">Space</span> to Heal,<br />
+            <span className="text-deep-rose italic">Breathe</span> & Transform.
           </motion.h1>
 
           {/* Bottom bar */}
