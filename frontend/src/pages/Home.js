@@ -8,12 +8,15 @@ import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Star, Quote, Instagram, Messa
 const HERO_FIGURE = '/images/Hero_Banner.png';
 const WEIGHT_IMG = '/images/image-2.jpeg';
 const GALLERY_IMAGES = [
-  'https://images.unsplash.com/photo-1612215033461-f2185845eb4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85',
-  'https://images.pexels.com/photos/5201529/pexels-photo-5201529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  'https://images.unsplash.com/photo-1663820108880-74a416c819da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHlvZ2ElMjBvdXRkb29yfGVufDB8fHx8MTc3NDYwMzEwOHww&ixlib=rb-4.1.0&q=85',
-  'https://images.pexels.com/photos/4908556/pexels-photo-4908556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  'https://images.pexels.com/photos/6648802/pexels-photo-6648802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  'https://images.unsplash.com/photo-1767611120077-3697335ec748?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHx5b2dhJTIwbWVkaXRhdGlvbiUyMHBlYWNlZnVsJTIwc3R1ZGlvfGVufDB8fHx8MTc3NDYwMzI2OXww&ixlib=rb-4.1.0&q=85',
+  '/images/image-1.jpeg',
+  '/images/image-2.jpeg',
+  '/images/image-3.jpg',
+  '/images/image-4.jpeg',
+  '/images/group-img.jpeg',
+  '/images/_1851.JPG.jpeg',
+  '/images/_6505.JPG.jpeg',
+  '/images/_6608.JPG.jpeg',
+  '/images/_6770.JPG.jpeg',
 ];
 
 
