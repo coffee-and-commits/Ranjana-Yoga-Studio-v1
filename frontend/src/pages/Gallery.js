@@ -17,12 +17,6 @@ const galleryImages = [
   { src: '/images/_6818.JPG.jpeg', alt: 'Meditation session', tall: false },
   { src: '/images/_6835.JPG.jpeg', alt: 'Yoga pose', tall: true },
   { src: '/images/_6846.JPG.jpeg', alt: 'Studio practice', tall: false },
-  { src: '/images/_8037.JPG.jpeg', alt: 'Yoga session', tall: false },
-  { src: '/images/_8594.JPG.jpeg', alt: 'Yoga practice', tall: true },
-  { src: '/images/_8595.JPG.jpeg', alt: 'Studio yoga', tall: false },
-  { src: '/images/_8605.JPG.jpeg', alt: 'Yoga class', tall: false },
-  { src: '/images/_8606.JPG.jpeg', alt: 'Meditation', tall: true },
-  { src: '/images/_8609.JPG.jpeg', alt: 'Studio session', tall: false },
   { src: '/images/17.jpeg', alt: 'Yoga practice', tall: false },
   { src: '/images/WhatsApp%20Image%202026-03-25%20at%2012.55.43%20PM.jpeg', alt: 'Studio moment', tall: false },
 ];

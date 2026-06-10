@@ -9,6 +9,7 @@ import Services from "@/pages/Services";
 import Schedule from "@/pages/Schedule";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
+import UpcomingEvent from "@/pages/UpcomingEvent";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,6 +33,7 @@ function AppContent() {
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/upcoming-event" element={<UpcomingEvent />} />
         </Routes>
       </main>
       <Footer />

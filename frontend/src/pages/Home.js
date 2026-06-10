@@ -13,7 +13,7 @@ const GALLERY_IMAGES = [
   '/images/image-3.jpg',
   '/images/image-4.jpeg',
   '/images/group-img.jpeg',
-  '/images/_1851.JPG.jpeg',
+  '/images/_1851.JPG.jpeg', 
   '/images/_6505.JPG.jpeg',
   '/images/_6608.JPG.jpeg',
   '/images/_6770.JPG.jpeg',
@@ -128,7 +128,7 @@ function HeroSection() {
         className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none overflow-hidden"
       >
         <span className="font-cormorant text-[10rem] sm:text-[14rem] md:text-[18rem] lg:text-[24rem] xl:text-[28rem] font-light tracking-tight text-charcoal/[0.03] leading-none whitespace-nowrap">
-          Balance
+          Ranjana
         </span>
       </motion.div>
 
@@ -141,7 +141,7 @@ function HeroSection() {
           <img
             src={HERO_FIGURE}
             alt="Yoga meditation pose"
-            className="w-auto h-[62vh] sm:h-[72vh] lg:h-[88vh] object-contain object-bottom max-w-none select-none block"
+            className="w-auto mb-[220px] md:mb-0 h-[62vh] sm:h-[65vh] lg:h-[75vh] object-contain object-bottom max-w-none select-none block"
             data-testid="hero-figure"
           />
           {/* Edge faders - precisely on the image boundaries */}
@@ -162,7 +162,7 @@ function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="font-jost text-[10px] sm:text-xs md:text-lg tracking-[0.25em] uppercase text-gold-soft/70 mb-3 pointer-events-auto"
+            className="font-jost text-[10px] sm:text-xs md:text-lg tracking-[0.25em] uppercase text-black mb-3 pointer-events-auto"
           >
             Ranjana Yoga Studio
           </motion.p>
@@ -185,35 +185,22 @@ function HeroSection() {
             transition={{ delay: 0.9, duration: 0.7 }}
             className="flex items-end justify-between mt-5 lg:mt-8 pointer-events-auto flex-wrap gap-3"
           >
-            {/* Social icons */}
-            <div className="flex items-center gap-4">
-              <a href="#" className="text-charcoal/30 hover:text-gold-soft transition-colors duration-300" aria-label="Instagram" data-testid="hero-instagram">
-                <Instagram size={18} strokeWidth={1.5} />
-              </a>
-              <a href="#" className="text-charcoal/30 hover:text-gold-soft transition-colors duration-300" aria-label="WhatsApp" data-testid="hero-whatsapp">
-                <MessageCircle size={18} strokeWidth={1.5} />
-              </a>
-              <span className="font-jost text-[10px] tracking-[0.15em] uppercase text-charcoal/20 hidden sm:inline ml-2">
-                @ranjanayogastudio
-              </span>
-            </div>
-
             {/* CTAs + scroll */}
             <div className="flex items-center gap-3">
               <Link
-                to="/contact"
+                to="/upcoming-event"
                 data-testid="hero-explore-classes"
                 className="font-jost text-sm font-medium tracking-[0.06em] px-7 py-3 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
               >
-                get started
+                Upcoming Event
               </Link>
-              <Link
-                to="/services"
+              <button
                 data-testid="hero-book-trial"
+                onClick={() => document.getElementById('weight-loss-section').scrollIntoView({ behavior: 'smooth' })}
                 className="font-jost text-sm font-medium tracking-[0.06em] px-7 py-3 rounded-full bg-ivory border border-sand text-charcoal hover:bg-beige transition-all duration-300"
               >
-                view classes
-              </Link>
+                Weight Loss Program
+              </button>
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ repeat: Infinity, duration: 2.2 }}
@@ -240,7 +227,7 @@ function StatsSection() {
         <AnimatedSection className="text-center mb-16">
           <p className="font-jost text-xs md:text-xl font-semibold tracking-[0.2em] uppercase text-gold-soft mb-4">Welcome to Ranjana Yoga Studio</p>
           <p className="font-jost text-base text-taupe max-w-2xl mx-auto leading-relaxed">
-            We believe wellness is not a destination &ndash; it is a way of living. At Ranjana Yoga Studio, we create a space where every individual can slow down, reconnect, and rebuild &ndash; through movement, breath, and the healing traditions of yoga and Ayurveda.
+            <b> We believe wellness is not a destination &ndash; it is a way of living.</b> <br /> At Ranjana Yoga Studio, we create a space where every individual can slow down, reconnect, and rebuild &ndash; through movement, breath, and the healing traditions of yoga and Ayurveda.
           </p>
         </AnimatedSection>
 
@@ -248,12 +235,12 @@ function StatsSection() {
           {[
             { value: '200+', label: 'Lives Transformed' },
             { value: '5+', label: 'Years of Experience' },
-            { value: 'Small', label: 'Personalized Attension' },
+            { value: 'Small Group', label: 'Session Personalized Attension' },
           ].map((stat) => (
             <StaggerItem key={stat.label} className="text-center">
               <p className="font-cormorant text-5xl lg:text-6xl font-light text-charcoal">{stat.value}</p>
               <div className="w-8 h-px bg-gold-soft/40 mx-auto my-3" />
-              <p className="font-jost text-sm text-taupe tracking-wide">{stat.label}</p>
+              <p className="font-jost text-sm text-xl tracking-wide">{stat.label}</p>
             </StaggerItem>
           ))}
         </StaggerContainer>
@@ -303,13 +290,13 @@ function ServicesSection() {
 
 function WeightLossSection() {
   return (
-    <section data-testid="weight-loss-section" className="py-20 lg:py-28 bg-ivory relative overflow-hidden">
+    <section id="weight-loss-section" data-testid="weight-loss-section" className="py-20 lg:py-28 bg-ivory relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <FadeIn direction="left" className="order-2 lg:order-1">
-            <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Our Speciality</p>
+            <p className="font-jost text-xs tracking-[0.2em] uppercase text-dark mb-3">Our Speciality</p>
             <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal mb-6 leading-[1.15]">
-              Transform Your Body, Naturally.
+              Weight Loss Program
             </h2>
             <p className="font-jost text-base text-taupe leading-relaxed mb-8">
               Our dedicated weight loss batches combine the power of yoga with personalized diet guidance &ndash; designed to boost your metabolism, build real strength, and create results that last. No shortcuts. No extremes. Just a sustainable, science-backed, and deeply natural approach to a healthier you.

@@ -179,7 +179,7 @@ export default function Services() {
           <AnimatedSection>
             <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-4">What We Do</p>
             <h1 className="font-cormorant text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-charcoal leading-[1.1]">
-              Our Services
+              Yoga Program
             </h1>
             <p className="font-jost text-base text-taupe mt-6 max-w-xl mx-auto leading-relaxed">
               Every practice we offer is rooted in ancient wisdom &ndash; and designed for your modern life.
