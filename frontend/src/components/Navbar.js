@@ -105,7 +105,7 @@ export default function Navbar() {
                 data-testid="nav-book-trial"
                 className="font-jost text-sm font-medium tracking-[0.08em] px-6 py-2.5 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
               >
-                Book a Trial
+                Book Your Session
               </Link>
             </div>
 
@@ -159,7 +159,7 @@ export default function Navbar() {
                   to="/contact"
                   className="font-jost text-sm font-medium tracking-[0.08em] px-8 py-3 rounded-full bg-blush border border-gold-soft text-charcoal"
                 >
-                  Book a Trial
+                  Book Your Session
                 </Link>
               </motion.div>
             </div>
