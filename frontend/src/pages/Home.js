@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
 import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
 
 const HERO_FIGURE = '/images/Hero_Banner.png';
-const WEIGHT_IMG = '/images/image-2.jpeg';
 const GALLERY_IMAGES = [
   '/images/image-1.jpeg',
   '/images/image-2.jpeg',
@@ -226,7 +225,7 @@ function StatsSection() {
       <div className="max-w-5xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
           <p className="font-jost text-xs md:text-xl font-semibold tracking-[0.2em] uppercase text-gold-soft mb-4">Welcome to Ranjana Yoga Studio</p>
-          <p className="font-jost text-base text-taupe max-w-2xl mx-auto leading-relaxed">
+          <p className="font-jost text-base text-black max-w-2xl mx-auto leading-relaxed">
             <b> We believe wellness is not a destination &ndash; it is a way of living.</b> <br /> At Ranjana Yoga Studio, we create a space where every individual can slow down, reconnect, and rebuild &ndash; through movement, breath, and the healing traditions of yoga and Ayurveda.
           </p>
         </AnimatedSection>
@@ -235,14 +234,34 @@ function StatsSection() {
           {[
             { value: '200+', label: 'Lives Transformed' },
             { value: '5+', label: 'Years of Experience' },
-            { value: 'Small Group', label: 'Session Personalized Attension' },
+            { value: 'Small Group', label: 'Session' },
+            { value: '14.1k+', label: 'Youtube Subscribers', href: 'https://www.youtube.com/@ranjanayogastudio_offical' },
+            { value: '129k+', label: 'Instagram Followers', href: 'https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw' },
+            { value: '102K+', label: 'Facebook Friends', href:'https://www.facebook.com/share/14awhk3o9Q7/' },
           ].map((stat) => (
-            <StaggerItem key={stat.label} className="text-center">
-              <p className="font-cormorant text-5xl lg:text-6xl font-light text-charcoal">{stat.value}</p>
-              <div className="w-8 h-px bg-gold-soft/40 mx-auto my-3" />
-              <p className="font-jost text-sm text-xl tracking-wide">{stat.label}</p>
+            <StaggerItem key={stat.label} className="text-center mb-1 0">
+              {stat.href ? (
+                <a href={stat.href} target="_blank" rel="noopener noreferrer" className="group block">
+                  <p className="font-cormorant text-5xl lg:text-6xl font-light text-black group-hover:text-deep-rose transition-colors duration-300">{stat.value}</p>
+                  <div className="w-8 h-px bg-gold-soft/40 mx-auto my-3" />
+                  <p className="font-jost text-xl tracking-wide text-black group-hover:text-deep-rose transition-colors duration-300">{stat.label}</p>
+                </a>
+              ) : (
+                <>
+                  <p className="font-cormorant text-5xl lg:text-6xl font-light text-black">{stat.value}</p>
+                  <div className="w-8 h-px bg-gold-soft/40 mx-auto my-3" />
+                  <p className="font-jost text-xl tracking-wide text-black">{stat.label}</p>
+                </>
+              )}
             </StaggerItem>
           ))}
+
+          <div className="col-span-1 sm:col-span-3 text-center mt-4">
+            <p className="font-jost text-base text-black leading-relaxed">
+              Be a part of a growing wellness family of 2 Lakh +<br />
+              Follow us for daily yoga practices, healing tips and real transformations.
+            </p>
+          </div>
         </StaggerContainer>
       </div>
     </section>
@@ -288,7 +307,24 @@ function ServicesSection() {
   );
 }
 
+const TRANSFORMATION_IMAGES = [
+  '/testimonials/01.webp',
+  '/testimonials/02.webp',
+  '/testimonials/03.webp',
+  '/testimonials/04.webp',
+  '/testimonials/05.webp',
+];
+
 function WeightLossSection() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % TRANSFORMATION_IMAGES.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="weight-loss-section" data-testid="weight-loss-section" className="py-20 lg:py-28 bg-ivory relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
@@ -298,7 +334,7 @@ function WeightLossSection() {
             <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal mb-6 leading-[1.15]">
               Weight Loss Program
             </h2>
-            <p className="font-jost text-base text-taupe leading-relaxed mb-8">
+            <p className="font-jost text-base text-black leading-relaxed mb-8">
               Our dedicated weight loss batches combine the power of yoga with personalized diet guidance &ndash; designed to boost your metabolism, build real strength, and create results that last. No shortcuts. No extremes. Just a sustainable, science-backed, and deeply natural approach to a healthier you.
             </p>
             <ul className="space-y-3 mb-8">
@@ -321,11 +357,30 @@ function WeightLossSection() {
           <FadeIn direction="right" className="order-1 lg:order-2 relative">
             <div className="relative">
               <div className="absolute -top-4 -right-4 w-full h-full border border-gold-soft/30 rounded-xl" />
-              <img
-                src={WEIGHT_IMG}
-                alt="Weight loss yoga"
-                className="w-full h-[400px] lg:h-[500px] object-cover rounded-xl relative z-10"
-              />
+              <div className="relative w-full h-[400px] lg:h-[500px] rounded-xl overflow-hidden z-10">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={current}
+                    src={TRANSFORMATION_IMAGES[current]}
+                    alt={`Transformation ${current + 1}`}
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -40 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full h-full object-cover absolute inset-0"
+                  />
+                </AnimatePresence>
+              </div>
+              {/* Dots */}
+              <div className="flex justify-center gap-2 mt-4 relative z-10">
+                {TRANSFORMATION_IMAGES.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-6 bg-gold-soft' : 'w-1.5 bg-sand'}`}
+                  />
+                ))}
+              </div>
             </div>
           </FadeIn>
         </div>
@@ -346,7 +401,7 @@ function WhyUsSection() {
               <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-[3.5rem] font-normal tracking-tight text-charcoal leading-[1.05] mb-8">
                 Why Ranjana<br />Yoga Studio?
               </h2>
-              <p className="font-jost text-sm text-taupe leading-relaxed mb-10 max-w-sm">
+              <p className="font-jost text-sm text-black leading-relaxed mb-10 max-w-sm">
                 We create a space where every individual can slow down, reconnect, and rebuild through ancient healing traditions.
               </p>
               <Link
@@ -373,7 +428,7 @@ function WhyUsSection() {
                   </div>
                   <p className="font-jost text-xs tracking-[0.15em] uppercase text-taupe mb-2">{card.category}</p>
                   <h3 className="font-cormorant text-2xl sm:text-3xl font-normal tracking-tight text-charcoal mb-3">{card.title}</h3>
-                  <p className="font-jost text-sm text-taupe leading-relaxed max-w-lg">{card.desc}</p>
+                  <p className="font-jost text-sm text-black leading-relaxed max-w-lg">{card.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -395,7 +450,7 @@ function TestimonialsSection() {
       {/* Parallax background image */}
       <motion.div style={{ y: imgY }} className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1758274535860-93a116aa7897?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHx5b2dhJTIwY2xhc3MlMjBncm91cCUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwwfHx8fDE3NzQ2MTI4Nzl8MA&ixlib=rb-4.1.0&q=85"
+          src="/images/testimonial-bg.jpeg"
           alt="Yoga background"
           className="w-full h-[130%] object-cover opacity-20"
         />
@@ -470,9 +525,9 @@ function CTABanner() {
           <Link
             to="/contact"
             data-testid="cta-book-trial"
-            className="inline-flex font-jost text-sm font-medium tracking-[0.08em] px-10 py-3.5 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
+            className="font-jost text-sm font-medium tracking-[0.08em] px-6 py-2.5 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
           >
-            Book My Free Trial
+            Book Your Session
           </Link>
         </AnimatedSection>
       </div>

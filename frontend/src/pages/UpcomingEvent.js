@@ -6,34 +6,13 @@ import { ArrowRight, Calendar, Clock, MapPin, Users } from 'lucide-react';
 
 const events = [
   {
-    title: 'Weight Loss Yoga Bootcamp',
-    date: 'July 5, 2026',
-    time: '6:30 AM – 8:00 AM',
-    location: 'Ranjana Yoga Studio, Pune',
-    spots: '10 spots left',
-    tag: 'Upcoming',
-    desc: 'A 4-week intensive weight loss yoga program combining power yoga, breathwork, and diet guidance for real, lasting results.',
-    image: '/images/image-2.jpeg',
-  },
-  {
-    title: "Women's Wellness Workshop",
-    date: 'July 19, 2026',
-    time: '9:00 AM – 12:00 PM',
-    location: 'Ranjana Yoga Studio, Pune',
-    spots: '8 spots left',
-    tag: 'Workshop',
-    desc: 'A half-day workshop focused on yoga practices that support hormonal balance, PCOD/PCOS management, and mental well-being.',
-    image: '/images/image-3.jpg',
-  },
-  {
-    title: "Beginner's Yoga Open House",
-    date: 'August 2, 2026',
-    time: '7:00 AM – 8:30 AM',
-    location: 'Ranjana Yoga Studio, Pune',
-    spots: 'Free Entry',
-    tag: 'Free',
-    desc: 'Curious about yoga? Join us for a free introductory session — no experience needed. Try a class and meet the community.',
-    image: '/images/group-img.jpeg',
+    title: 'Yoga Carnival',
+    date: 'June 21, 2026 — International Yoga Day',
+    time: '',
+    location: '',
+    spots: '',
+    desc: 'Inner Harmony Festival — Ranjana Yoga Studio as Yoga Partner alongside MAX Healthcare & Akaaya Events. DM for more info: 9899861888',
+    image: '/event/event-1.jpeg',
   },
 ];
 
@@ -80,11 +59,9 @@ export default function UpcomingEvent() {
                     <img
                       src={event.image}
                       alt={event.title}
-                      className="w-full h-64 sm:h-80 object-cover rounded-xl relative z-10"
+                      className="w-full object-contain rounded-xl relative z-10"
                     />
-                    <span className="absolute top-4 left-4 z-20 font-jost text-xs tracking-[0.15em] uppercase px-3 py-1 rounded-full bg-blush border border-gold-soft text-charcoal">
-                      {event.tag}
-                    </span>
+                  
                   </div>
 
                   {/* Details */}
@@ -100,7 +77,7 @@ export default function UpcomingEvent() {
                         { Icon: Clock, text: event.time },
                         { Icon: MapPin, text: event.location },
                         { Icon: Users, text: event.spots },
-                      ].map(({ Icon, text }) => (
+                      ].filter(({ text }) => text).map(({ Icon, text }) => (
                         <li key={text} className="flex items-center gap-3">
                           <Icon size={15} className="text-gold-soft flex-shrink-0" strokeWidth={1.5} />
                           <span className="font-jost text-sm text-charcoal">{text}</span>
