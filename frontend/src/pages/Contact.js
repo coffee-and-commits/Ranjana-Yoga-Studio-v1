@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { AnimatedSection, FadeIn } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
-import { MapPin, Phone, Mail, MessageCircle, Instagram, Clock, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Instagram, Send, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const contactInfo = [
   { icon: MapPin, label: 'Address', value: 'Badrish colony, Lane no 6, House no 168, Near Ambiwala Gurudwara, Dharmpur (Danda), Dehradun' },
   { icon: Phone, label: 'Phone', value: '7409508399, 7452024056', href: 'tel:+917409508399' },
-  { icon: Mail, label: 'Email', value: '[Email Address]' },
-  { icon: MessageCircle, label: 'WhatsApp', value: '[WhatsApp Number]' },
+  { icon: MessageCircle, label: 'WhatsApp', value: '7409508399', href: 'https://wa.me/917409508399' },
   { icon: Instagram, label: 'Instagram', value: '@yogicsoul_ranj', href: 'https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw' },
-  { icon: Clock, label: 'Studio Hours', value: 'Morning: 5.30 AM - 9.15 AM | Evening: 5.30 PM - 8.30 PM' },
 ];
 
 const interests = [

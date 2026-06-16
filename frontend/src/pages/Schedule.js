@@ -4,24 +4,27 @@ import { FeesBatchDetails } from '@/components/FeesBatchDetails';
 import { LotusDivider } from '@/components/LotusDecor';
 import { ArrowRight, Info } from 'lucide-react';
 
-const dailySlots = [
-  { time: '5:00 AM – 6:00 AM', class: 'Personalized Batches', level: 'Small Groups | Offline + Online', duration: '\u2014' },
-  { time: '7:00 AM – 8:00 AM', class: 'Personalized Batches', level: 'Small Groups | Offline + Online', duration: '\u2014' },
-  { time: '6:40 PM – 7:40 PM', class: 'Personalized Batches', level: 'Small Groups | Offline + Online', duration: '\u2014' },
-  { time: '6:00 AM – 7:00 AM', class: 'Weight Loss Batch', level: 'Online Group', duration: '\u2014' },
-  { time: '8:10 AM – 9:15 AM', class: 'Weight Loss Batch', level: 'Offline Batch', duration: '\u2014' },
-  { time: '5:30 PM – 6:30 PM', class: 'Kids Batch', level: 'Offline Only', duration: '\u2014' },
-];
-
-const schedule = [
-  ...['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => ({
-    day,
-    slots: dailySlots
-  })),
+const classSchedule = [
   {
-    day: 'Sunday', slots: [
-      { time: 'Rest Day', class: 'Rest / Special Session', level: '\u2014', duration: '\u2014' },
-    ]
+    name: 'Personalized Batches',
+    slots: [
+      { time: '5:00 AM – 6:00 AM', level: 'Small Groups | Offline + Online' },
+      { time: '7:00 AM – 8:00 AM', level: 'Small Groups | Offline + Online' },
+      { time: '6:40 PM – 7:40 PM', level: 'Small Groups | Offline + Online' },
+    ],
+  },
+  {
+    name: 'Weight Loss Batch',
+    slots: [
+      { time: '6:00 AM – 7:00 AM', level: 'Online Group' },
+      { time: '8:10 AM – 9:15 AM', level: 'Offline Batch' },
+    ],
+  },
+  {
+    name: 'Kids Batch',
+    slots: [
+      { time: '5:30 PM – 6:30 PM', level: 'Offline Only' },
+    ],
   },
 ];
 
@@ -30,7 +33,6 @@ const levelColors = {
   'Online Group': 'bg-gold-pale/40 text-charcoal',
   'Offline Batch': 'bg-beige text-charcoal',
   'Offline Only': 'bg-beige text-charcoal',
-  '\u2014': 'bg-ivory text-taupe',
 };
 
 export default function Schedule() {
@@ -45,7 +47,7 @@ export default function Schedule() {
             <h1 className="font-cormorant text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-charcoal leading-[1.1]">
               Class Details
             </h1>
-            <p className="font-jost text-base text-taupe mt-6 max-w-xl mx-auto leading-relaxed">
+            <p className="font-jost text-base text-black mt-6 max-w-xl mx-auto leading-relaxed">
               Find a time that fits your life &ndash; and commit to your wellness journey.
             </p>
           </AnimatedSection>
@@ -54,7 +56,7 @@ export default function Schedule() {
 
       {/* Schedule Table */}
       <section data-testid="schedule-table" className="py-16 lg:py-24 bg-ivory">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           {/* Desktop Table */}
           <div className="hidden lg:block">
             <AnimatedSection>
@@ -62,30 +64,26 @@ export default function Schedule() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-sand/50">
-                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Day</th>
-                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Time</th>
                       <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Class</th>
-                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Level</th>
-                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Duration</th>
+                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Format</th>
+                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Time</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {schedule.map((day) =>
-                      day.slots.map((slot, si) => (
-                        <tr key={`${day.day}-${si}`} className="border-b border-sand/20 hover:bg-beige/80 transition-colors duration-200">
+                    {classSchedule.map((cls) =>
+                      cls.slots.map((slot, si) => (
+                        <tr key={`${cls.name}-${si}`} className="border-b border-sand/20 hover:bg-beige/80 transition-colors duration-200">
                           {si === 0 && (
-                            <td rowSpan={day.slots.length} className="font-cormorant text-lg font-semibold text-charcoal py-4 px-6 align-top border-r border-sand/20">
-                              {day.day}
+                            <td rowSpan={cls.slots.length} className="font-cormorant text-lg font-semibold text-charcoal py-4 px-6 align-middle border-r border-sand/20">
+                              {cls.name}
                             </td>
                           )}
-                          <td className="font-jost text-sm text-taupe py-4 px-6">{slot.time}</td>
-                          <td className="font-jost text-sm text-charcoal py-4 px-6 font-medium">{slot.class}</td>
                           <td className="py-4 px-6">
                             <span className={`font-jost text-xs px-3 py-1 rounded-full ${levelColors[slot.level]}`}>
                               {slot.level}
                             </span>
                           </td>
-                          <td className="font-jost text-sm text-taupe py-4 px-6">{slot.duration}</td>
+                          <td className="font-jost text-sm text-black py-4 px-6">{slot.time}</td>
                         </tr>
                       ))
                     )}
@@ -98,22 +96,18 @@ export default function Schedule() {
           {/* Mobile Cards */}
           <div className="lg:hidden">
             <StaggerContainer className="space-y-6">
-              {schedule.map((day) => (
-                <StaggerItem key={day.day}>
+              {classSchedule.map((cls) => (
+                <StaggerItem key={cls.name}>
                   <div className="bg-beige/50 border border-sand/50 rounded-2xl p-5">
-                    <h3 className="font-cormorant text-xl font-semibold text-charcoal mb-4">{day.day}</h3>
+                    <h3 className="font-cormorant text-xl font-semibold text-charcoal mb-4">{cls.name}</h3>
                     <div className="space-y-3">
-                      {day.slots.map((slot, si) => (
+                      {cls.slots.map((slot, si) => (
                         <div key={si} className="bg-ivory rounded-xl p-4 border border-sand/20">
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="font-jost text-sm font-medium text-charcoal">{slot.class}</span>
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="font-jost text-sm font-medium text-charcoal">{slot.time}</span>
                             <span className={`font-jost text-xs px-3 py-0.5 rounded-full ${levelColors[slot.level]}`}>
                               {slot.level}
                             </span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <span className="font-jost text-xs text-taupe">{slot.time}</span>
-                            <span className="font-jost text-xs text-taupe">{slot.duration}</span>
                           </div>
                         </div>
                       ))}
@@ -128,29 +122,6 @@ export default function Schedule() {
 
       <FeesBatchDetails className="bg-beige/20" />
 
-      <LotusDivider />
-
-      {/* Batch Info */}
-      <section data-testid="batch-info" className="py-16 lg:py-20 bg-beige/20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <AnimatedSection>
-            <div className="bg-ivory border border-sand/50 rounded-2xl p-8 lg:p-12">
-              <Info size={28} className="text-gold-soft mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-cormorant text-2xl font-light text-charcoal mb-4">Please Note</h3>
-              <p className="font-jost text-sm text-taupe leading-relaxed mb-8">
-                All classes are conducted in small, personalized batches to ensure individual attention and effective results. Advance registration is required.
-              </p>
-              <Link
-                to="/contact"
-                data-testid="schedule-enquire-cta"
-                className="inline-flex items-center gap-2 font-jost text-sm font-medium tracking-[0.08em] px-8 py-3 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
-              >
-                Enquire to Join a Batch <ArrowRight size={16} />
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
     </div>
   );
 }

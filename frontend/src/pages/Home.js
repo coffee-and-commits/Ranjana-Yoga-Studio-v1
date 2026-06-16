@@ -22,36 +22,39 @@ const GALLERY_IMAGES = [
 
 
 const services = [
-  { icon: Leaf, title: "Yoga for Women's Health & Wellness", desc: "Specially designed yoga practices to support hormonal balance and help manage PCOD, PCOS, thyroid imbalance, irregular periods, and fertility-related concerns — naturally and safely." },
-  { icon: Leaf, title: "Weight Loss Yoga Program", desc: 'Structured yoga sessions focused on fat loss, improving metabolism, and building strength — in a safe and sustainable way.' },
-  { icon: Waves, title: 'Beginner to Intermediate Yoga Classes', desc: 'Step-by-step guided sessions suitable for beginners and intermediate levels, focusing on flexibility, strength, and mindful movement.' },
-  // { icon: Plus, title: 'Marma Therapy', desc: 'An ancient Indian energy-healing practice that stimulates vital points for deep restoration.' },
+  { icon: Leaf, title: "Yoga Classes", desc: "Our yoga sessions are thoughtfully designed for individuals at both beginner and intermediate levels. Whether you are stepping onto the mat for the first time or looking to deepen your existing practice, our classes offer a structured, mindful, and progressive experience. Each session focuses on building strength, improving flexibility, releasing tension, and cultivating a quiet, focused mind.", link: '/services#yoga' },
+  { icon: Leaf, title: "Weight Loss Yoga Program", desc: 'Structured yoga sessions focused on fat loss, improving metabolism, and building strength — in a safe and sustainable way.', link: '/services#weight-loss' },
+  { icon: Waves, title: 'Sound Healing', desc: 'Experience deep relaxation and inner balance through the healing vibrations of sound.', link: '/services#sound-healing' },
 ];
 
 const testimonials = [
-  { name: 'Priya S.', text: 'Ranjana Studio completely changed my relationship with my body. I lost 8 kgs in 3 months \u2014 but more importantly, I finally feel calm and strong.', program: 'Weight Loss Program' },
-  { name: 'Meena R.', text: 'The personalized attention here is unlike any gym or studio I\'ve visited. The marma therapy sessions have been life-changing for my stress levels.', program: 'Marma Therapy' },
-  { name: 'Anita D.', text: 'Such a peaceful, warm environment. The Ayurveda sessions combined with yoga have genuinely improved my digestion and sleep.', program: 'Ayurveda & Yoga' },
+  { name: 'Pinki Rana', text: 'I truly enjoy learning yoga from Ranjana Ma\'am. Her teaching style is clear gentle and very motivating. She is an amazing yoga teacher very calm patient and knowledgeable.', program: 'Yoga Classes' },
+  { name: 'Shalu Rawat', text: 'When I joined Ranjana ma\'am\'s classes, I was 93.7 kg, low on stamina, and not really aware of how important my health was.\n\nWithin just one month, I have dropped to 89 kg\nMy fat loss has been incredible, I have started eating healthy, and now I truly understand the importance of taking care of my body.\n\nEvery session makes me stronger, and my stamina is finally building up.\nThank you, Ranjana ma\'am, for guiding me towards a healthier and happier version of myself.', program: 'Weight loss Program' },
+  { name: 'Mukta', text: 'I\'ve been practicing yoga at Ranjana Yoga Studio for a few months now, and it\'s been a game-changer for my mind and body! The instructors are knowledgeable, supportive, and offer modifications to suit all levels. The studio is clean, peaceful, and welcoming. I\'ve noticed improvements in my flexibility, balance, and overall well-being. Highly recommended to anyone looking for a nurturing yoga community.', program: 'Yoga classes' },
+  { name: 'Arushi', text: 'Love Ranjana Ma\'am\'s Yoga classes. She creates a really welcoming, positive vibe. I always leave fresh, relaxed and happy. Highly recommend.', program: 'Yoga classes' },
+  { name: 'Esha nautiyal', text: 'The yoga studio is one of the best in Dehradun. If you are looking for getting fit both physically and mentally you should join Online classes are also available so you can join from anywhere in the world. Thank you to Ranjana the Maestro.', program: 'Yoga classes' },
 ];
 
 const whyUsCards = [
   {
-    category: 'Personalized',
     title: 'Small, Personalized Batches',
     desc: 'So you get proper attention in every session',
     image: 'images/17.jpeg'
   },
   {
-    category: 'Holistic',
     title: 'Beginner-friendly approach',
     desc: 'Simple, easy-to-follow practices for all levels',
     image: 'images/image-3.JPEG'
   },
   {
-    category: 'Sustainable',
     title: 'Focus on real results',
     desc: ' supporting weight loss, strength, and stress relief',
     image: 'images/image-4.jpeg'
+  },
+  {
+    title: 'Supportive Environment',
+    desc: 'A welcoming space where everyone can learn, grow and heal.',
+    image: 'images/studio-mg.jpeg'
   },
 ];
 
@@ -140,7 +143,7 @@ function HeroSection() {
           <img
             src={HERO_FIGURE}
             alt="Yoga meditation pose"
-            className="w-auto mb-[220px] md:mb-0 h-[62vh] sm:h-[65vh] lg:h-[75vh] object-contain object-bottom max-w-none select-none block"
+            className="w-auto mb-[280px] md:mb-0 h-[55vh] sm:h-[65vh] lg:h-[75vh] object-contain object-bottom max-w-none select-none block"
             data-testid="hero-figure"
           />
           {/* Edge faders - precisely on the image boundaries */}
@@ -236,8 +239,8 @@ function StatsSection() {
             { value: '5+', label: 'Years of Experience' },
             { value: 'Small Group', label: 'Session' },
             { value: '14.1k+', label: 'Youtube Subscribers', href: 'https://www.youtube.com/@ranjanayogastudio_offical' },
-            { value: '129k+', label: 'Instagram Followers', href: 'https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw' },
-            { value: '102K+', label: 'Facebook Friends', href:'https://www.facebook.com/share/14awhk3o9Q7/' },
+            { value: '131k+', label: 'Instagram Followers', href: 'https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw' },
+            { value: '129k+', label: 'Facebook Friends', href:'https://www.facebook.com/share/14awhk3o9Q7/' },
           ].map((stat) => (
             <StaggerItem key={stat.label} className="text-center mb-1 0">
               {stat.href ? (
@@ -274,7 +277,7 @@ function ServicesSection() {
       <div className="blob-pink -bottom-40 -left-40" />
       <div className="max-w-6xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Discover</p>
+          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Yoga Program</p>
           <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal">What We Offer</h2>
         </AnimatedSection>
 
@@ -283,11 +286,13 @@ function ServicesSection() {
             const Icon = service.icon;
             return (
               <StaggerItem key={service.title}>
-                <div className="bg-beige border border-sand rounded-2xl p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full" data-testid={`service-card-${service.title.toLowerCase().replace(/\s/g, '-')}`}>
-                  <Icon size={28} className="text-gold-soft mb-5" strokeWidth={1.5} />
-                  <h3 className="font-cormorant text-xl font-semibold text-charcoal mb-3">{service.title}</h3>
-                  <p className="font-jost text-sm text-taupe leading-relaxed">{service.desc}</p>
-                </div>
+                <Link to={service.link} className="block h-full">
+                  <div className="bg-beige border border-sand rounded-2xl p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full cursor-pointer" data-testid={`service-card-${service.title.toLowerCase().replace(/\s/g, '-')}`}>
+                    <Icon size={28} className="text-gold-soft mb-5" strokeWidth={1.5} />
+                    <h3 className="font-cormorant text-xl font-semibold text-charcoal mb-3">{service.title}</h3>
+                    <p className="font-jost text-sm text-black leading-relaxed">{service.desc}</p>
+                  </div>
+                </Link>
               </StaggerItem>
             );
           })}
@@ -299,7 +304,7 @@ function ServicesSection() {
             data-testid="view-all-services"
             className="inline-flex items-center gap-2 font-jost text-sm tracking-[0.08em] text-gold-soft hover:text-deep-rose transition-colors duration-300"
           >
-            View All Services <ArrowRight size={16} />
+            View All Programs <ArrowRight size={16} />
           </Link>
         </AnimatedSection>
       </div>
@@ -346,7 +351,7 @@ function WeightLossSection() {
               ))}
             </ul>
             <Link
-              to="/services"
+              to="/services#weight-loss"
               data-testid="weight-loss-cta"
               className="inline-flex items-center gap-2 font-jost text-sm font-medium tracking-[0.08em] px-7 py-3 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
             >
@@ -426,7 +431,6 @@ function WhyUsSection() {
                       className="w-full h-56 sm:h-72 lg:h-80 object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <p className="font-jost text-xs tracking-[0.15em] uppercase text-taupe mb-2">{card.category}</p>
                   <h3 className="font-cormorant text-2xl sm:text-3xl font-normal tracking-tight text-charcoal mb-3">{card.title}</h3>
                   <p className="font-jost text-sm text-black leading-relaxed max-w-lg">{card.desc}</p>
                 </div>
@@ -482,8 +486,8 @@ function TestimonialsSection() {
               <div className="flex items-center gap-4">
                 <div className="w-10 h-px bg-gold-soft/40" />
                 <div>
-                  <p className="font-jost text-sm font-medium text-ivory/80 tracking-wide">{testimonials[active].name}</p>
-                  <p className="font-jost text-xs text-ivory/40">{testimonials[active].program}</p>
+                  <p className="font-jost text-base font-medium text-ivory/80 tracking-wide">{testimonials[active].name}</p>
+                  <p className="font-jost text-sm text-ivory/40">{testimonials[active].program}</p>
                 </div>
               </div>
             </motion.div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { WHATSAPP_NUMBER, INSTAGRAM_URL } from '@/lib/constants';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -13,8 +14,6 @@ const navLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
-const WHATSAPP_NUMBER = '917409508399';
-const INSTAGRAM_URL = 'https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw';
 
 function SocialDock() {
   return (

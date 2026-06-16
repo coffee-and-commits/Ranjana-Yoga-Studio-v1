@@ -53,7 +53,7 @@ export default function About() {
               <h2 className="font-cormorant text-3xl sm:text-4xl font-light tracking-tight text-charcoal mb-6">
                 More Than a Studio &ndash; A Space to Heal
               </h2>
-              <div className="font-jost text-base text-taupe leading-relaxed space-y-4">
+              <div className="font-jost text-base text-black leading-relaxed space-y-4">
                 <p>
                   Ranjana Yoga Studio was created with a simple belief — true wellness comes from balance in body and mind.
                 </p>
@@ -81,7 +81,7 @@ export default function About() {
               <h2 className="font-cormorant text-3xl sm:text-4xl font-light tracking-tight text-charcoal mb-6">
                 Ranjana Kumain
               </h2>
-              <div className="font-jost text-base text-taupe leading-relaxed space-y-4">
+              <div className="font-jost text-base text-black leading-relaxed space-y-4">
                 <p>
                   After completing my MBA in HR and working in a multinational company, I felt a deeper calling towards yoga — something that brought real balance and purpose into my life.
                   What started as a simple practice soon became a passion. I pursued my Master’s in Yoga and completed a 400-hour teacher training in Rishikesh, along with certifications in prenatal and postnatal yoga.

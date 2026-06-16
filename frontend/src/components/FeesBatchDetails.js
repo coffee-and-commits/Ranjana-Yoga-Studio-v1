@@ -8,13 +8,13 @@ export function FeesBatchDetails({ className = '' }) {
       <div className="max-w-3xl mx-auto px-6 text-center">
         <AnimatedSection>
           <div className="bg-ivory border border-sand/50 rounded-2xl p-8 lg:p-10">
-            <h2 className="font-cormorant text-2xl sm:text-3xl font-light text-charcoal mb-5">
+            <h2 className="font-cormorant text-2xl sm:text-3xl font-light text-black mb-5">
               Fees &amp; Batch Details
             </h2>
-            <p className="font-jost text-sm text-taupe leading-relaxed mb-3">
+            <p className="font-jost text-sm text-black leading-relaxed mb-3">
               Fees may vary based on batch type and availability.
             </p>
-            <p className="font-jost text-sm text-taupe leading-relaxed mb-8">
+            <p className="font-jost text-sm text-black leading-relaxed mb-8">
               For complete details and to choose the right batch for you, connect with us on WhatsApp.
             </p>
             <a
