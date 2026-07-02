@@ -6,7 +6,7 @@ import { LotusDivider } from '@/components/LotusDecor';
 import { ArrowRight, Check } from 'lucide-react';
 import { WHATSAPP_URL } from '@/lib/constants';
 
-const YOGA_IMG = '/images/08.jpeg';
+const YOGA_IMG = '/images/yoga.jpeg';
 const WEIGHT_IMG = '/testimonials/05.webp';
 const SOUND_HEALING_IMG = '/images/sound-healing.jpeg';
 

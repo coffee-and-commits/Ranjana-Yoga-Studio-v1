@@ -5,7 +5,7 @@ import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/compon
 import { LotusDivider } from '@/components/LotusDecor';
 import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
 
-const HERO_FIGURE = '/images/Hero_Banner.png';
+const HERO_FIGURE = '/images/HERO_BANNER_NEW.png';
 const GALLERY_IMAGES = [
   '/images/image-1.jpeg',
   '/images/image-2.jpeg',
