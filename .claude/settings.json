@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/sourabhbaliramdhakne/Desktop/Ranjana-Yoga-Studio-v1/frontend/src/i18n/locales)"
+    ],
+    "additionalDirectories": [
+      "/Users/sourabhbaliramdhakne/Desktop/Ranjana-Yoga-Studio-v1/frontend/src/i18n"
+    ]
+  }
+}

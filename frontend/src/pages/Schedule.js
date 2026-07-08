@@ -1,54 +1,34 @@
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { FeesBatchDetails } from '@/components/FeesBatchDetails';
 import { LotusDivider } from '@/components/LotusDecor';
-import { ArrowRight, Info } from 'lucide-react';
-
-const classSchedule = [
-  {
-    name: 'Personalized Batches',
-    slots: [
-      { time: '5:00 AM – 6:00 AM', level: 'Small Groups | Offline + Online' },
-      { time: '7:00 AM – 8:00 AM', level: 'Small Groups | Offline + Online' },
-      { time: '6:40 PM – 7:40 PM', level: 'Small Groups | Offline + Online' },
-    ],
-  },
-  {
-    name: 'Weight Loss Batch',
-    slots: [
-      { time: '6:00 AM – 7:00 AM', level: 'Online Group' },
-      { time: '8:10 AM – 9:15 AM', level: 'Offline Batch' },
-    ],
-  },
-  {
-    name: 'Kids Batch',
-    slots: [
-      { time: '5:30 PM – 6:30 PM', level: 'Offline Only' },
-    ],
-  },
-];
+import { SEO } from '@/components/SEO';
 
 const levelColors = {
-  'Small Groups | Offline + Online': 'bg-blush/40 text-charcoal',
-  'Online Group': 'bg-gold-pale/40 text-charcoal',
-  'Offline Batch': 'bg-beige text-charcoal',
-  'Offline Only': 'bg-beige text-charcoal',
+  smallGroup: 'bg-blush/40 text-charcoal',
+  onlineGroup: 'bg-gold-pale/40 text-charcoal',
+  offlineBatch: 'bg-beige text-charcoal',
+  offlineOnly: 'bg-beige text-charcoal',
 };
 
 export default function Schedule() {
+  const { t } = useTranslation();
+  const classSchedule = t('schedulePage.classes', { returnObjects: true });
+
   return (
     <div data-testid="schedule-page">
+      <SEO page="schedule" />
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-24 bg-beige/30 relative overflow-hidden">
         <div className="blob-pink top-0 right-0" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <AnimatedSection>
-            <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-4">Timetable</p>
+            <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-4">{t('schedulePage.hero.label')}</p>
             <h1 className="font-cormorant text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-charcoal leading-[1.1]">
-              Class Details
+              {t('schedulePage.hero.heading')}
             </h1>
             <p className="font-jost text-base text-black mt-6 max-w-xl mx-auto leading-relaxed">
-              Find a time that fits your life &ndash; and commit to your wellness journey.
+              {t('schedulePage.hero.desc')}
             </p>
           </AnimatedSection>
         </div>
@@ -64,9 +44,9 @@ export default function Schedule() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-sand/50">
-                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Class</th>
-                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Format</th>
-                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">Time</th>
+                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">{t('schedulePage.table.classHeader')}</th>
+                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">{t('schedulePage.table.formatHeader')}</th>
+                      <th className="font-jost text-xs tracking-[0.15em] uppercase text-gold-soft py-4 px-6 text-left">{t('schedulePage.table.timeHeader')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -79,7 +59,7 @@ export default function Schedule() {
                             </td>
                           )}
                           <td className="py-4 px-6">
-                            <span className={`font-jost text-xs px-3 py-1 rounded-full ${levelColors[slot.level]}`}>
+                            <span className={`font-jost text-xs px-3 py-1 rounded-full ${levelColors[slot.levelKey]}`}>
                               {slot.level}
                             </span>
                           </td>
@@ -105,7 +85,7 @@ export default function Schedule() {
                         <div key={si} className="bg-ivory rounded-xl p-4 border border-sand/20">
                           <div className="flex items-center justify-between mb-1">
                             <span className="font-jost text-sm font-medium text-charcoal">{slot.time}</span>
-                            <span className={`font-jost text-xs px-3 py-0.5 rounded-full ${levelColors[slot.level]}`}>
+                            <span className={`font-jost text-xs px-3 py-0.5 rounded-full ${levelColors[slot.levelKey]}`}>
                               {slot.level}
                             </span>
                           </div>

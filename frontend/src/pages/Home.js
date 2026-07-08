@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
+import { SEO } from '@/components/SEO';
 import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
 
 const HERO_FIGURE = '/images/HERO_BANNER_NEW.png';
@@ -12,66 +14,24 @@ const GALLERY_IMAGES = [
   '/images/image-3.jpg',
   '/images/image-4.jpeg',
   '/images/group-img.jpeg',
-  '/images/_1851.JPG.jpeg', 
+  '/images/_1851.JPG.jpeg',
   '/images/_6505.JPG.jpeg',
   '/images/_6608.JPG.jpeg',
   '/images/_6770.JPG.jpeg',
 ];
 
+const SERVICE_ICONS = [Leaf, Leaf, Waves];
 
-
-
-const services = [
-  { icon: Leaf, title: "Yoga Classes", desc: "Our yoga sessions are thoughtfully designed for individuals at both beginner and intermediate levels. Whether you are stepping onto the mat for the first time or looking to deepen your existing practice, our classes offer a structured, mindful, and progressive experience. Each session focuses on building strength, improving flexibility, releasing tension, and cultivating a quiet, focused mind.", link: '/services#yoga' },
-  { icon: Leaf, title: "Weight Loss Yoga Program", desc: 'Structured yoga sessions focused on fat loss, improving metabolism, and building strength — in a safe and sustainable way.', link: '/services#weight-loss' },
-  { icon: Waves, title: 'Sound Healing', desc: 'Experience deep relaxation and inner balance through the healing vibrations of sound.', link: '/services#sound-healing' },
+const TRANSFORMATION_IMAGES = [
+  '/testimonials/01.webp',
+  '/testimonials/02.webp',
+  '/testimonials/03.webp',
+  '/testimonials/04.webp',
+  '/testimonials/05.webp',
 ];
-
-const testimonials = [
-  { name: 'Pinki Rana', text: 'I truly enjoy learning yoga from Ranjana Ma\'am. Her teaching style is clear gentle and very motivating. She is an amazing yoga teacher very calm patient and knowledgeable.', program: 'Yoga Classes' },
-  { name: 'Shalu Rawat', text: 'When I joined Ranjana ma\'am\'s classes, I was 93.7 kg, low on stamina, and not really aware of how important my health was.\n\nWithin just one month, I have dropped to 89 kg\nMy fat loss has been incredible, I have started eating healthy, and now I truly understand the importance of taking care of my body.\n\nEvery session makes me stronger, and my stamina is finally building up.\nThank you, Ranjana ma\'am, for guiding me towards a healthier and happier version of myself.', program: 'Weight loss Program' },
-  { name: 'Mukta', text: 'I\'ve been practicing yoga at Ranjana Yoga Studio for a few months now, and it\'s been a game-changer for my mind and body! The instructors are knowledgeable, supportive, and offer modifications to suit all levels. The studio is clean, peaceful, and welcoming. I\'ve noticed improvements in my flexibility, balance, and overall well-being. Highly recommended to anyone looking for a nurturing yoga community.', program: 'Yoga classes' },
-  { name: 'Arushi', text: 'Love Ranjana Ma\'am\'s Yoga classes. She creates a really welcoming, positive vibe. I always leave fresh, relaxed and happy. Highly recommend.', program: 'Yoga classes' },
-  { name: 'Esha nautiyal', text: 'The yoga studio is one of the best in Dehradun. If you are looking for getting fit both physically and mentally you should join Online classes are also available so you can join from anywhere in the world. Thank you to Ranjana the Maestro.', program: 'Yoga classes' },
-];
-
-const whyUsCards = [
-  {
-    title: 'Small, Personalized Batches',
-    desc: 'So you get proper attention in every session',
-    image: 'images/17.jpeg'
-  },
-  {
-    title: 'Beginner-friendly approach',
-    desc: 'Simple, easy-to-follow practices for all levels',
-    image: 'images/image-3.JPEG'
-  },
-  {
-    title: 'Focus on real results',
-    desc: ' supporting weight loss, strength, and stress relief',
-    image: 'images/image-4.jpeg'
-  },
-  {
-    title: 'Supportive Environment',
-    desc: 'A welcoming space where everyone can learn, grow and heal.',
-    image: 'images/studio-mg.jpeg'
-  },
-];
-
-// inset  offset-x  offset-y  blur  spread  color
-// offset-x: 0 = no horizontal shift
-// offset-y: negative = shadow origin at bottom (fades bottom edge)
-//           positive = shadow origin at top    (fades top edge)
-// offset-x: positive = shadow origin at left  (fades left edge)
-//           negative = shadow origin at right  (fades right edge)
-const FIGURE_EDGE_FADER = [
-  'inset   0    -30px  60px  30px  #FDF8F2', // bottom edge
-  'inset   0     40px  80px  40px  #FDF8F2', // top edge
-  'inset  10px    0    80px  30px  #FDF8F2', // left edge
-  'inset -60px    0    80px  30px  #FDF8F2', // right edge
-].join(', ');
 
 function HeroSection() {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
 
@@ -130,7 +90,7 @@ function HeroSection() {
         className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none overflow-hidden"
       >
         <span className="font-cormorant text-[10rem] sm:text-[14rem] md:text-[18rem] lg:text-[24rem] xl:text-[28rem] font-light tracking-tight text-charcoal/[0.03] leading-none whitespace-nowrap">
-          Ranjana
+          {t('home.hero.bgText')}
         </span>
       </motion.div>
 
@@ -146,10 +106,6 @@ function HeroSection() {
             className="w-auto mb-[280px] md:mb-0 h-[55vh] sm:h-[65vh] lg:h-[75vh] object-contain object-bottom max-w-none select-none block"
             data-testid="hero-figure"
           />
-          {/* Edge faders - precisely on the image boundaries */}
-          {/* <div className="absolute inset-0 pointer-events-none" style={{
-            boxShadow: FIGURE_EDGE_FADER
-          }} /> */}
         </div>
       </motion.div>
 
@@ -166,7 +122,7 @@ function HeroSection() {
             transition={{ delay: 0.4, duration: 0.7 }}
             className="font-jost text-[10px] sm:text-xs md:text-lg tracking-[0.25em] uppercase text-black mb-3 pointer-events-auto"
           >
-            Ranjana Yoga Studio
+            {t('home.hero.label')}
           </motion.p>
 
           {/* Main headline - shorter, bolder, overlapping figure */}
@@ -176,8 +132,8 @@ function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="font-cormorant text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-tight text-charcoal leading-[0.92] max-w-[85%] sm:max-w-[65%] lg:max-w-[55%] pointer-events-auto"
           >
-            A <span className="text-deep-rose italic">Space</span> to Heal,<br />
-            <span className="text-deep-rose italic">Breathe</span> & Transform.
+            {t('home.hero.headingPart1')} <span className="text-deep-rose italic">{t('home.hero.headingEmphasis1')}</span> {t('home.hero.headingPart2')}<br />
+            <span className="text-deep-rose italic">{t('home.hero.headingEmphasis2')}</span> {t('home.hero.headingPart3')}
           </motion.h1>
 
           {/* Bottom bar */}
@@ -194,14 +150,14 @@ function HeroSection() {
                 data-testid="hero-explore-classes"
                 className="font-jost text-sm font-medium tracking-[0.06em] px-7 py-3 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
               >
-                Upcoming Event
+                {t('home.hero.ctaUpcoming')}
               </Link>
               <button
                 data-testid="hero-book-trial"
                 onClick={() => document.getElementById('weight-loss-section').scrollIntoView({ behavior: 'smooth' })}
                 className="font-jost text-sm font-medium tracking-[0.06em] px-7 py-3 rounded-full bg-ivory border border-sand text-charcoal hover:bg-beige transition-all duration-300"
               >
-                Weight Loss Program
+                {t('home.hero.ctaWeightLoss')}
               </button>
               <motion.div
                 animate={{ y: [0, 6, 0] }}
@@ -222,26 +178,22 @@ function HeroSection() {
 }
 
 function StatsSection() {
+  const { t } = useTranslation();
+  const items = t('home.stats.items', { returnObjects: true });
+
   return (
     <section data-testid="stats-section" className="py-20 lg:py-24 bg-ivory relative overflow-hidden">
       <div className="blob-gold top-0 right-0" />
       <div className="max-w-5xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <p className="font-jost text-xs md:text-xl font-semibold tracking-[0.2em] uppercase text-gold-soft mb-4">Welcome to Ranjana Yoga Studio</p>
+          <p className="font-jost text-xs md:text-xl font-semibold tracking-[0.2em] uppercase text-gold-soft mb-4">{t('home.stats.welcome')}</p>
           <p className="font-jost text-base text-black max-w-2xl mx-auto leading-relaxed">
-            <b> We believe wellness is not a destination &ndash; it is a way of living.</b> <br /> At Ranjana Yoga Studio, we create a space where every individual can slow down, reconnect, and rebuild &ndash; through movement, breath, and the healing traditions of yoga and Ayurveda.
+            <b>{t('home.stats.introBold')}</b> <br /> {t('home.stats.introRest')}
           </p>
         </AnimatedSection>
 
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {[
-            { value: '200+', label: 'Lives Transformed' },
-            { value: '5+', label: 'Years of Experience' },
-            { value: 'Small Group', label: 'Session' },
-            { value: '14.1k+', label: 'Youtube Subscribers', href: 'https://www.youtube.com/@ranjanayogastudio_offical' },
-            { value: '131k+', label: 'Instagram Followers', href: 'https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw' },
-            { value: '129k+', label: 'Facebook Friends', href:'https://www.facebook.com/share/14awhk3o9Q7/' },
-          ].map((stat) => (
+          {items.map((stat) => (
             <StaggerItem key={stat.label} className="text-center mb-1 0">
               {stat.href ? (
                 <a href={stat.href} target="_blank" rel="noopener noreferrer" className="group block">
@@ -261,8 +213,8 @@ function StatsSection() {
 
           <div className="col-span-1 sm:col-span-3 text-center mt-4">
             <p className="font-jost text-base text-black leading-relaxed">
-              Be a part of a growing wellness family of 2 Lakh +<br />
-              Follow us for daily yoga practices, healing tips and real transformations.
+              {t('home.stats.footerLine1')}<br />
+              {t('home.stats.footerLine2')}
             </p>
           </div>
         </StaggerContainer>
@@ -272,18 +224,21 @@ function StatsSection() {
 }
 
 function ServicesSection() {
+  const { t } = useTranslation();
+  const services = t('home.services.items', { returnObjects: true });
+
   return (
     <section data-testid="services-overview" className="py-20 lg:py-24 bg-beige/50 relative overflow-hidden">
       <div className="blob-pink -bottom-40 -left-40" />
       <div className="max-w-6xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Yoga Program</p>
-          <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal">What We Offer</h2>
+          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">{t('home.services.label')}</p>
+          <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal">{t('home.services.heading')}</h2>
         </AnimatedSection>
 
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => {
-            const Icon = service.icon;
+          {services.map((service, i) => {
+            const Icon = SERVICE_ICONS[i];
             return (
               <StaggerItem key={service.title}>
                 <Link to={service.link} className="block h-full">
@@ -304,7 +259,7 @@ function ServicesSection() {
             data-testid="view-all-services"
             className="inline-flex items-center gap-2 font-jost text-sm tracking-[0.08em] text-gold-soft hover:text-deep-rose transition-colors duration-300"
           >
-            View All Programs <ArrowRight size={16} />
+            {t('home.services.viewAll')} <ArrowRight size={16} />
           </Link>
         </AnimatedSection>
       </div>
@@ -312,15 +267,9 @@ function ServicesSection() {
   );
 }
 
-const TRANSFORMATION_IMAGES = [
-  '/testimonials/01.webp',
-  '/testimonials/02.webp',
-  '/testimonials/03.webp',
-  '/testimonials/04.webp',
-  '/testimonials/05.webp',
-];
-
 function WeightLossSection() {
+  const { t } = useTranslation();
+  const features = t('home.weightLoss.features', { returnObjects: true });
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -335,15 +284,15 @@ function WeightLossSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <FadeIn direction="left" className="order-2 lg:order-1">
-            <p className="font-jost text-xs tracking-[0.2em] uppercase text-dark mb-3">Our Speciality</p>
+            <p className="font-jost text-xs tracking-[0.2em] uppercase text-dark mb-3">{t('home.weightLoss.label')}</p>
             <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal mb-6 leading-[1.15]">
-              Weight Loss Program
+              {t('home.weightLoss.heading')}
             </h2>
             <p className="font-jost text-base text-black leading-relaxed mb-8">
-              Our dedicated weight loss batches combine the power of yoga with personalized diet guidance &ndash; designed to boost your metabolism, build real strength, and create results that last. No shortcuts. No extremes. Just a sustainable, science-backed, and deeply natural approach to a healthier you.
+              {t('home.weightLoss.desc')}
             </p>
             <ul className="space-y-3 mb-8">
-              {['Power Yoga Sessions', 'Guided Diet Support', 'Metabolism Boosting Routines', 'Small Batch \u2013 Personal Attention'].map((item) => (
+              {features.map((item) => (
                 <li key={item} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-gold-soft" />
                   <span className="font-jost text-sm text-charcoal">{item}</span>
@@ -355,7 +304,7 @@ function WeightLossSection() {
               data-testid="weight-loss-cta"
               className="inline-flex items-center gap-2 font-jost text-sm font-medium tracking-[0.08em] px-7 py-3 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
             >
-              Learn About Weight Loss Program <ArrowRight size={16} />
+              {t('home.weightLoss.cta')} <ArrowRight size={16} />
             </Link>
           </FadeIn>
 
@@ -395,6 +344,9 @@ function WeightLossSection() {
 }
 
 function WhyUsSection() {
+  const { t } = useTranslation();
+  const cards = t('home.whyUs.cards', { returnObjects: true });
+
   return (
     <section data-testid="why-us-section" className="bg-beige/30 relative">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
@@ -402,26 +354,26 @@ function WhyUsSection() {
           {/* LEFT COLUMN - Sticky */}
           <div className="lg:sticky lg:top-28 lg:self-start py-16 lg:py-24">
             <AnimatedSection>
-              <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft/70 mb-5">Why Us</p>
+              <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft/70 mb-5">{t('home.whyUs.label')}</p>
               <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-[3.5rem] font-normal tracking-tight text-charcoal leading-[1.05] mb-8">
-                Why Ranjana<br />Yoga Studio?
+                {t('home.whyUs.headingLine1')}<br />{t('home.whyUs.headingLine2')}
               </h2>
               <p className="font-jost text-sm text-black leading-relaxed mb-10 max-w-sm">
-                We create a space where every individual can slow down, reconnect, and rebuild through ancient healing traditions.
+                {t('home.whyUs.desc')}
               </p>
               <Link
                 to="/services"
                 data-testid="why-us-cta"
                 className="inline-flex font-jost text-sm font-medium tracking-[0.06em] px-8 py-3 rounded-full border border-sand text-charcoal hover:bg-beige transition-all duration-300"
               >
-                explore services
+                {t('home.whyUs.cta')}
               </Link>
             </AnimatedSection>
           </div>
 
           {/* RIGHT COLUMN - Scrolling cards */}
           <div className="py-10 lg:py-20 space-y-16 lg:space-y-20">
-            {whyUsCards.map((card, i) => (
+            {cards.map((card, i) => (
               <FadeIn key={card.title} delay={i * 0.1}>
                 <div data-testid={`why-us-card-${i}`}>
                   <div className="overflow-hidden rounded-xl mb-5">
@@ -444,6 +396,8 @@ function WhyUsSection() {
 }
 
 function TestimonialsSection() {
+  const { t } = useTranslation();
+  const testimonials = t('home.testimonials.items', { returnObjects: true });
   const [active, setActive] = useState(0);
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
@@ -464,8 +418,8 @@ function TestimonialsSection() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-32">
         {/* Header */}
         <AnimatedSection className="mb-16">
-          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft/60 mb-3">Testimonials</p>
-          <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-ivory/90">What Our Members Say</h2>
+          <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft/60 mb-3">{t('home.testimonials.label')}</p>
+          <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-ivory/90">{t('home.testimonials.heading')}</h2>
         </AnimatedSection>
 
         {/* Active testimonial */}
@@ -515,23 +469,24 @@ function TestimonialsSection() {
 }
 
 function CTABanner() {
+  const { t } = useTranslation();
   return (
     <section data-testid="cta-banner" className="py-20 lg:py-28 bg-blush/20 relative overflow-hidden">
       <div className="blob-pink top-0 left-1/2 -translate-x-1/2" />
       <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
         <AnimatedSection>
           <h2 className="font-cormorant text-4xl sm:text-5xl font-light tracking-tight text-charcoal mb-4">
-            Ready to Begin Your Wellness Journey?
+            {t('home.cta.heading')}
           </h2>
           <p className="font-jost text-base text-taupe mb-10">
-            Your first step is free. Book a complimentary trial session today.
+            {t('home.cta.desc')}
           </p>
           <Link
             to="/contact"
             data-testid="cta-book-trial"
             className="font-jost text-sm font-medium tracking-[0.08em] px-6 py-2.5 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
           >
-            Book Your Session
+            {t('home.cta.button')}
           </Link>
         </AnimatedSection>
       </div>
@@ -540,12 +495,13 @@ function CTABanner() {
 }
 
 function GalleryStrip() {
+  const { t } = useTranslation();
   return (
     <section data-testid="gallery-strip" className="py-16 bg-ivory overflow-hidden">
       <AnimatedSection className="text-center mb-10">
-        <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-2">@ranjanayogastudio</p>
+        <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-2">{t('home.galleryStrip.handle')}</p>
         <Link to="/gallery" className="font-jost text-sm text-taupe hover:text-deep-rose transition-colors inline-flex items-center gap-1">
-          View Gallery <ArrowRight size={14} />
+          {t('home.galleryStrip.viewGallery')} <ArrowRight size={14} />
         </Link>
       </AnimatedSection>
       <div className="flex animate-marquee">
@@ -562,6 +518,7 @@ function GalleryStrip() {
 export default function Home() {
   return (
     <div data-testid="home-page">
+      <SEO page="home" />
       <HeroSection />
       <StatsSection />
       <LotusDivider />

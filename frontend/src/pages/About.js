@@ -1,38 +1,35 @@
+import { useTranslation } from 'react-i18next';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
+import { SEO } from '@/components/SEO';
 import { Award, BookOpen, Heart } from 'lucide-react';
 
 const ABOUT_IMG = '/images/group-img.jpeg';
 const INSTRUCTOR_IMG = '/images/profile-img.jpeg';
 
-const pillars = [
-  { num: '01', title: 'Balance', desc: 'Wellness begins when all aspects of your life \u2013 physical, mental, and emotional \u2013 are in harmony.', icon: BookOpen },
-  { num: '02', title: 'Heal', desc: 'Your body knows how to heal. Our role is to create the right conditions and guide you back to wholeness.', icon: Heart },
-  { num: '03', title: 'Transform', desc: 'Real transformation is sustainable. We help you build habits and awareness that last a lifetime.', icon: Award },
-];
-
-const highlights = [
-  { label: 'Session Types', value: 'Yoga, Ayurveda, Acupressure, Marma Therapy, Weight Loss' },
-  { label: 'Batch Size', value: 'Small, personalized groups' },
-  { label: 'Levels', value: 'Beginner & Intermediate' },
-  { label: 'Approach', value: 'Holistic \u2013 mind, body & spirit' },
-  { label: 'Focus', value: 'Long-term, natural wellness' },
-];
+const PILLAR_ICONS = [BookOpen, Heart, Award];
 
 export default function About() {
+  const { t } = useTranslation();
+  const storyParagraphs = t('about.story.paragraphs', { returnObjects: true });
+  const instructorParagraphs = t('about.instructor.paragraphs', { returnObjects: true });
+  const pillars = t('about.pillars', { returnObjects: true });
+  const highlights = t('about.highlights', { returnObjects: true });
+
   return (
     <div data-testid="about-page">
+      <SEO page="about" />
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-24 bg-beige/30 relative overflow-hidden">
         <div className="blob-gold top-0 right-0" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <AnimatedSection>
-            <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-4">About Us</p>
+            <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-4">{t('about.hero.label')}</p>
             <h1 className="font-cormorant text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-charcoal leading-[1.1]">
-              About Ranjana Yoga Studio
+              {t('about.hero.heading')}
             </h1>
             <p className="font-jost text-base text-taupe mt-6 max-w-xl mx-auto leading-relaxed">
-              A sanctuary for healing, movement, and inner harmony.
+              {t('about.hero.desc')}
             </p>
           </AnimatedSection>
         </div>
@@ -49,20 +46,14 @@ export default function About() {
               </div>
             </FadeIn>
             <FadeIn direction="right">
-              <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Our Story</p>
+              <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">{t('about.story.label')}</p>
               <h2 className="font-cormorant text-3xl sm:text-4xl font-light tracking-tight text-charcoal mb-6">
-                More Than a Studio &ndash; A Space to Heal
+                {t('about.story.heading')}
               </h2>
               <div className="font-jost text-base text-black leading-relaxed space-y-4">
-                <p>
-                  Ranjana Yoga Studio was created with a simple belief — true wellness comes from balance in body and mind.
-                </p>
-                <p>
-                  We offer a calm and supportive space for everyone, with a special focus on helping women manage stress, hormonal imbalances, and overall well-being.
-                </p>
-                <p>
-                  With small, personalized batches, every individual receives the attention and care they truly need — making each session effective, comfortable, and deeply nurturing.
-                </p>
+                {storyParagraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </FadeIn>
           </div>
@@ -77,27 +68,15 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn direction="right" className="order-2 lg:order-1">
-              <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">Our Expert</p>
+              <p className="font-jost text-xs tracking-[0.2em] uppercase text-gold-soft mb-3">{t('about.instructor.label')}</p>
               <h2 className="font-cormorant text-3xl sm:text-4xl font-light tracking-tight text-charcoal mb-6">
-                Ranjana Kumain
+                {t('about.instructor.name')}
               </h2>
               <div className="font-jost text-base text-black leading-relaxed space-y-4">
-                <p>
-                  After completing my MBA in HR and working in a multinational company, I felt a deeper calling towards yoga — something that brought real balance and purpose into my life.
-                  What started as a simple practice soon became a passion. I pursued my Master’s in Yoga and completed a 400-hour teacher training in Rishikesh, along with certifications in prenatal and postnatal yoga.
-                </p>
-                <p>
-                  For the past 3+ years, I have been guiding individuals — especially women — to manage stress, improve health, and feel more confident and balanced in their bodies.
-                  My work has been recognized with an International Women’s Day award, and my yoga practices have also been featured in newspaper articles — reaching and inspiring a wider community.
-                </p>
-              </div>
-              {/* <div className="mt-6 flex flex-wrap gap-3">
-                {['Certified Yoga Instructor', 'Ayurveda Practitioner', 'Marma Therapist'].map((cert) => (
-                  <span key={cert} className="font-jost text-xs tracking-wide px-4 py-1.5 rounded-full bg-gold-pale/30 text-charcoal border border-gold-soft/20">
-                    {cert}
-                  </span>
+                {instructorParagraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
                 ))}
-              </div> */}
+              </div>
             </FadeIn>
             <FadeIn direction="left" className="order-1 lg:order-2">
               <div className="relative">
@@ -117,8 +96,8 @@ export default function About() {
           </AnimatedSection>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {pillars.map((pillar) => {
-              const Icon = pillar.icon;
+            {pillars.map((pillar, i) => {
+              const Icon = PILLAR_ICONS[i];
               return (
                 <StaggerItem key={pillar.title} className="text-center">
                   <div className="w-14 h-14 rounded-full bg-blush/30 flex items-center justify-center mx-auto mb-4">

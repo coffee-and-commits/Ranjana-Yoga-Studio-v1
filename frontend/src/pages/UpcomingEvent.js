@@ -1,24 +1,18 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
+import { SEO } from '@/components/SEO';
 import { ArrowRight, Calendar, Clock, MapPin, Users } from 'lucide-react';
 
-const events = [
-  {
-    title: 'Yoga Carnival',
-    date: 'June 21, 2026 — International Yoga Day',
-    time: '',
-    location: '',
-    spots: '',
-    desc: 'Inner Harmony Festival — Ranjana Yoga Studio as Yoga Partner alongside MAX Healthcare & Akaaya Events. DM for more info: 9899861888',
-    image: '/event/event-1.jpeg',
-  },
-];
-
 export default function UpcomingEvent() {
+  const { t } = useTranslation();
+  const events = t('upcomingEventPage.events', { returnObjects: true });
+
   return (
     <div data-testid="upcoming-event-page">
+      <SEO page="upcomingEvent" />
       {/* Page Header */}
       <section className="pt-36 pb-16 bg-ivory relative overflow-hidden">
         <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] rounded-full opacity-20" style={{
@@ -30,12 +24,12 @@ export default function UpcomingEvent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="font-jost text-xs tracking-[0.25em] uppercase text-gold-soft mb-4">What's On</p>
+            <p className="font-jost text-xs tracking-[0.25em] uppercase text-gold-soft mb-4">{t('upcomingEventPage.hero.label')}</p>
             <h1 className="font-cormorant text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-charcoal leading-[1.0] mb-6">
-              Upcoming Events
+              {t('upcomingEventPage.hero.heading')}
             </h1>
             <p className="font-jost text-base text-taupe max-w-xl leading-relaxed">
-              Join us for workshops, programs, and open sessions designed to help you begin or deepen your wellness journey.
+              {t('upcomingEventPage.hero.desc')}
             </p>
           </motion.div>
         </div>
@@ -61,7 +55,7 @@ export default function UpcomingEvent() {
                       alt={event.title}
                       className="w-full object-contain rounded-xl relative z-10"
                     />
-                  
+
                   </div>
 
                   {/* Details */}
@@ -89,7 +83,7 @@ export default function UpcomingEvent() {
                       to="/contact"
                       className="inline-flex items-center gap-2 font-jost text-sm font-medium tracking-[0.08em] px-7 py-3 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
                     >
-                      Reserve My Spot <ArrowRight size={15} />
+                      {t('upcomingEventPage.reserveSpot')} <ArrowRight size={15} />
                     </Link>
                   </div>
                 </div>
@@ -108,16 +102,16 @@ export default function UpcomingEvent() {
         <div className="max-w-2xl mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="font-cormorant text-4xl font-light tracking-tight text-charcoal mb-4">
-              Don't See What You're Looking For?
+              {t('upcomingEventPage.cta.heading')}
             </h2>
             <p className="font-jost text-sm text-taupe mb-8 leading-relaxed">
-              We regularly add new workshops and programs. Get in touch and we'll let you know about upcoming sessions that match your goals.
+              {t('upcomingEventPage.cta.desc')}
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 font-jost text-sm font-medium tracking-[0.08em] px-8 py-3.5 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
             >
-              Contact Us <ArrowRight size={15} />
+              {t('upcomingEventPage.cta.button')} <ArrowRight size={15} />
             </Link>
           </AnimatedSection>
         </div>

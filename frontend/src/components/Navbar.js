@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { WHATSAPP_NUMBER, INSTAGRAM_URL } from '@/lib/constants';
 
-const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Yoga Program', path: '/services' },
-  { name: 'Class Details', path: '/schedule' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Upcoming Event', path: '/upcoming-event' },
-  { name: 'Contact', path: '/contact' },
+const NAV_KEYS = [
+  { key: 'home', path: '/' },
+  { key: 'about', path: '/about' },
+  { key: 'services', path: '/services' },
+  { key: 'schedule', path: '/schedule' },
+  { key: 'gallery', path: '/gallery' },
+  { key: 'upcomingEvent', path: '/upcoming-event' },
+  { key: 'contact', path: '/contact' },
 ];
 
 
@@ -48,6 +49,7 @@ function SocialDock() {
 }
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -85,18 +87,18 @@ export default function Navbar() {
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
+              {NAV_KEYS.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  data-testid={`nav-${link.name.toLowerCase()}`}
+                  data-testid={`nav-${t(`common.navLinks.${link.key}`).toLowerCase()}`}
                   className={`font-jost text-[15px] tracking-wide transition-colors duration-300 hover:text-deep-rose relative ${
                     location.pathname === link.path
                       ? 'text-charcoal nav-link-active'
                       : 'text-taupe'
                   }`}
                 >
-                  {link.name}
+                  {t(`common.navLinks.${link.key}`)}
                 </Link>
               ))}
               <Link
@@ -104,7 +106,7 @@ export default function Navbar() {
                 data-testid="nav-book-trial"
                 className="font-jost text-sm font-medium tracking-[0.08em] px-6 py-2.5 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300"
               >
-                Book Your Session
+                {t('common.bookSession')}
               </Link>
             </div>
 
@@ -132,7 +134,7 @@ export default function Navbar() {
             data-testid="mobile-menu"
           >
             <div className="flex flex-col items-center gap-8">
-              {navLinks.map((link, i) => (
+              {NAV_KEYS.map((link, i) => (
                 <motion.div
                   key={link.path}
                   initial={{ opacity: 0, y: 20 }}
@@ -145,7 +147,7 @@ export default function Navbar() {
                       location.pathname === link.path ? 'text-deep-rose' : 'text-charcoal'
                     }`}
                   >
-                    {link.name}
+                    {t(`common.navLinks.${link.key}`)}
                   </Link>
                 </motion.div>
               ))}
@@ -158,7 +160,7 @@ export default function Navbar() {
                   to="/contact"
                   className="font-jost text-sm font-medium tracking-[0.08em] px-8 py-3 rounded-full bg-blush border border-gold-soft text-charcoal"
                 >
-                  Book Your Session
+                  {t('common.bookSession')}
                 </Link>
               </motion.div>
             </div>

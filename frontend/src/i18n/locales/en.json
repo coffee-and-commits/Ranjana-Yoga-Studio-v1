@@ -1,0 +1,380 @@
+{
+  "seo": {
+    "home": {
+      "title": "Ranjana Yoga Studio | Yoga, Weight Loss & Sound Healing in Dehradun",
+      "description": "Ranjana Yoga Studio was founded with one belief: that true health is a harmony of body, mind, and spirit. We began as a small, intimate space – and that intimacy remains at the heart of everything we do.",
+      "ogTitle": "Ranjana Yoga Studio – A Space to Heal, Breathe & Transform",
+      "ogDescription": "Discover yoga classes, weight loss programs, and sound healing at Ranjana Yoga Studio in Dehradun.",
+      "ogImage": "/images/HERO_BANNER_NEW.png"
+    },
+    "about": {
+      "title": "About Us | Ranjana Yoga Studio",
+      "description": "A sanctuary for healing, movement, and inner harmony. Learn about Ranjana Yoga Studio's story and our founder Ranjana Kumain.",
+      "ogTitle": "About Ranjana Yoga Studio",
+      "ogDescription": "More than a studio – a space to heal. Discover our story and the philosophy behind Ranjana Yoga Studio.",
+      "ogImage": "/images/group-img.jpeg"
+    },
+    "services": {
+      "title": "Yoga Program & Services | Ranjana Yoga Studio",
+      "description": "Every practice we offer is rooted in ancient wisdom – and designed for your modern life. Explore Yoga Classes, the Weight Loss Program, and Sound Healing.",
+      "ogTitle": "Yoga Program – Ranjana Yoga Studio",
+      "ogDescription": "Explore our Yoga Classes, Weight Loss Program, and Sound Healing sessions.",
+      "ogImage": "/images/yoga.jpeg"
+    },
+    "schedule": {
+      "title": "Class Details & Timetable | Ranjana Yoga Studio",
+      "description": "Find a time that fits your life – and commit to your wellness journey. View our full class schedule and batch timings.",
+      "ogTitle": "Class Details – Ranjana Yoga Studio",
+      "ogDescription": "Check batch timings for Personalized, Weight Loss, and Kids yoga batches.",
+      "ogImage": "/images/17.jpeg"
+    },
+    "gallery": {
+      "title": "Gallery & Stories | Ranjana Yoga Studio",
+      "description": "A glimpse into our studio, our community, and the journeys that unfold here. Real stories, real results.",
+      "ogTitle": "Gallery – Ranjana Yoga Studio",
+      "ogDescription": "Moments of transformation from our studio and community.",
+      "ogImage": "/images/group-img.jpeg"
+    },
+    "contact": {
+      "title": "Contact Us | Ranjana Yoga Studio",
+      "description": "Have a question, or ready to begin? We'd love to hear from you. Reach Ranjana Yoga Studio in Dehradun.",
+      "ogTitle": "Contact Ranjana Yoga Studio",
+      "ogDescription": "Get in touch with Ranjana Yoga Studio in Dehradun via phone, WhatsApp, or our contact form.",
+      "ogImage": "/logo.png"
+    },
+    "upcomingEvent": {
+      "title": "Upcoming Events | Ranjana Yoga Studio",
+      "description": "Join us for workshops, programs, and open sessions designed to help you begin or deepen your wellness journey.",
+      "ogTitle": "Upcoming Events – Ranjana Yoga Studio",
+      "ogDescription": "Discover upcoming workshops and events at Ranjana Yoga Studio.",
+      "ogImage": "/event/event-1.jpeg"
+    }
+  },
+  "common": {
+    "navLinks": {
+      "home": "Home",
+      "about": "About",
+      "services": "Yoga Program",
+      "schedule": "Class Details",
+      "gallery": "Gallery",
+      "upcomingEvent": "Upcoming Event",
+      "contact": "Contact"
+    },
+    "bookSession": "Book Your Session"
+  },
+  "footer": {
+    "brand": "Ranjana Yoga Studio",
+    "tagline": "Balance • Heal • Transform",
+    "description": "A holistic wellness space for yoga, Ayurveda, acupressure, and marma therapy.",
+    "quickLinks": "Quick Links",
+    "contactTitle": "Contact",
+    "followUs": "Follow Us",
+    "address": "Badrish colony, Lane no 6, House no 168, Near Ambiwala Gurudwara, Dharmpur (Danda), Dehradun",
+    "phone": "7409508399, 7452024056",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "copyright": "© 2025 Ranjana Yoga Studio. All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms"
+  },
+  "feesBatchDetails": {
+    "title": "Fees & Batch Details",
+    "line1": "Fees may vary based on batch type and availability.",
+    "line2": "For complete details and to choose the right batch for you, connect with us on WhatsApp.",
+    "cta": "👉 Chat on WhatsApp ⭐"
+  },
+  "home": {
+    "hero": {
+      "label": "Ranjana Yoga Studio",
+      "bgText": "Ranjana",
+      "headingPart1": "A",
+      "headingEmphasis1": "Space",
+      "headingPart2": "to Heal,",
+      "headingEmphasis2": "Breathe",
+      "headingPart3": "& Transform.",
+      "ctaUpcoming": "Upcoming Event",
+      "ctaWeightLoss": "Weight Loss Program"
+    },
+    "stats": {
+      "welcome": "Welcome to Ranjana Yoga Studio",
+      "introBold": "We believe wellness is not a destination – it is a way of living.",
+      "introRest": "At Ranjana Yoga Studio, we create a space where every individual can slow down, reconnect, and rebuild – through movement, breath, and the healing traditions of yoga and Ayurveda.",
+      "items": [
+        { "value": "200+", "label": "Lives Transformed" },
+        { "value": "5+", "label": "Years of Experience" },
+        { "value": "Small Group", "label": "Session" },
+        { "value": "14.1k+", "label": "Youtube Subscribers", "href": "https://www.youtube.com/@ranjanayogastudio_offical" },
+        { "value": "131k+", "label": "Instagram Followers", "href": "https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw" },
+        { "value": "129k+", "label": "Facebook Friends", "href": "https://www.facebook.com/share/14awhk3o9Q7/" }
+      ],
+      "footerLine1": "Be a part of a growing wellness family of 2 Lakh +",
+      "footerLine2": "Follow us for daily yoga practices, healing tips and real transformations."
+    },
+    "services": {
+      "label": "Yoga Program",
+      "heading": "What We Offer",
+      "viewAll": "View All Programs",
+      "items": [
+        { "title": "Yoga Classes", "desc": "Our yoga sessions are thoughtfully designed for individuals at both beginner and intermediate levels. Whether you are stepping onto the mat for the first time or looking to deepen your existing practice, our classes offer a structured, mindful, and progressive experience. Each session focuses on building strength, improving flexibility, releasing tension, and cultivating a quiet, focused mind.", "link": "/services#yoga" },
+        { "title": "Weight Loss Yoga Program", "desc": "Structured yoga sessions focused on fat loss, improving metabolism, and building strength — in a safe and sustainable way.", "link": "/services#weight-loss" },
+        { "title": "Sound Healing", "desc": "Experience deep relaxation and inner balance through the healing vibrations of sound.", "link": "/services#sound-healing" }
+      ]
+    },
+    "weightLoss": {
+      "label": "Our Speciality",
+      "heading": "Weight Loss Program",
+      "desc": "Our dedicated weight loss batches combine the power of yoga with personalized diet guidance – designed to boost your metabolism, build real strength, and create results that last. No shortcuts. No extremes. Just a sustainable, science-backed, and deeply natural approach to a healthier you.",
+      "features": ["Power Yoga Sessions", "Guided Diet Support", "Metabolism Boosting Routines", "Small Batch – Personal Attention"],
+      "cta": "Learn About Weight Loss Program"
+    },
+    "whyUs": {
+      "label": "Why Us",
+      "headingLine1": "Why Ranjana",
+      "headingLine2": "Yoga Studio?",
+      "desc": "We create a space where every individual can slow down, reconnect, and rebuild through ancient healing traditions.",
+      "cta": "explore services",
+      "cards": [
+        { "title": "Small, Personalized Batches", "desc": "So you get proper attention in every session", "image": "images/17.jpeg" },
+        { "title": "Beginner-friendly approach", "desc": "Simple, easy-to-follow practices for all levels", "image": "images/image-3.JPEG" },
+        { "title": "Focus on real results", "desc": " supporting weight loss, strength, and stress relief", "image": "images/image-4.jpeg" },
+        { "title": "Supportive Environment", "desc": "A welcoming space where everyone can learn, grow and heal.", "image": "images/studio-mg.jpeg" }
+      ]
+    },
+    "testimonials": {
+      "label": "Testimonials",
+      "heading": "What Our Members Say",
+      "items": [
+        { "name": "Pinki Rana", "text": "I truly enjoy learning yoga from Ranjana Ma'am. Her teaching style is clear gentle and very motivating. She is an amazing yoga teacher very calm patient and knowledgeable.", "program": "Yoga Classes" },
+        { "name": "Shalu Rawat", "text": "When I joined Ranjana ma'am's classes, I was 93.7 kg, low on stamina, and not really aware of how important my health was.\n\nWithin just one month, I have dropped to 89 kg\nMy fat loss has been incredible, I have started eating healthy, and now I truly understand the importance of taking care of my body.\n\nEvery session makes me stronger, and my stamina is finally building up.\nThank you, Ranjana ma'am, for guiding me towards a healthier and happier version of myself.", "program": "Weight loss Program" },
+        { "name": "Mukta", "text": "I've been practicing yoga at Ranjana Yoga Studio for a few months now, and it's been a game-changer for my mind and body! The instructors are knowledgeable, supportive, and offer modifications to suit all levels. The studio is clean, peaceful, and welcoming. I've noticed improvements in my flexibility, balance, and overall well-being. Highly recommended to anyone looking for a nurturing yoga community.", "program": "Yoga classes" },
+        { "name": "Arushi", "text": "Love Ranjana Ma'am's Yoga classes. She creates a really welcoming, positive vibe. I always leave fresh, relaxed and happy. Highly recommend.", "program": "Yoga classes" },
+        { "name": "Esha nautiyal", "text": "The yoga studio is one of the best in Dehradun. If you are looking for getting fit both physically and mentally you should join Online classes are also available so you can join from anywhere in the world. Thank you to Ranjana the Maestro.", "program": "Yoga classes" }
+      ]
+    },
+    "cta": {
+      "heading": "Ready to Begin Your Wellness Journey?",
+      "desc": "Your first step is free. Book a complimentary trial session today.",
+      "button": "Book Your Session"
+    },
+    "galleryStrip": {
+      "handle": "@ranjanayogastudio",
+      "viewGallery": "View Gallery"
+    }
+  },
+  "about": {
+    "hero": {
+      "label": "About Us",
+      "heading": "About Ranjana Yoga Studio",
+      "desc": "A sanctuary for healing, movement, and inner harmony."
+    },
+    "story": {
+      "label": "Our Story",
+      "heading": "More Than a Studio – A Space to Heal",
+      "paragraphs": [
+        "Ranjana Yoga Studio was created with a simple belief — true wellness comes from balance in body and mind.",
+        "We offer a calm and supportive space for everyone, with a special focus on helping women manage stress, hormonal imbalances, and overall well-being.",
+        "With small, personalized batches, every individual receives the attention and care they truly need — making each session effective, comfortable, and deeply nurturing."
+      ]
+    },
+    "instructor": {
+      "label": "Our Expert",
+      "name": "Ranjana Kumain",
+      "paragraphs": [
+        "After completing my MBA in HR and working in a multinational company, I felt a deeper calling towards yoga — something that brought real balance and purpose into my life. What started as a simple practice soon became a passion. I pursued my Master’s in Yoga and completed a 400-hour teacher training in Rishikesh, along with certifications in prenatal and postnatal yoga.",
+        "For the past 3+ years, I have been guiding individuals — especially women — to manage stress, improve health, and feel more confident and balanced in their bodies. My work has been recognized with an International Women’s Day award, and my yoga practices have also been featured in newspaper articles — reaching and inspiring a wider community."
+      ]
+    },
+    "pillars": [
+      { "num": "01", "title": "Balance", "desc": "Wellness begins when all aspects of your life – physical, mental, and emotional – are in harmony." },
+      { "num": "02", "title": "Heal", "desc": "Your body knows how to heal. Our role is to create the right conditions and guide you back to wholeness." },
+      { "num": "03", "title": "Transform", "desc": "Real transformation is sustainable. We help you build habits and awareness that last a lifetime." }
+    ],
+    "highlights": [
+      { "label": "Session Types", "value": "Yoga, Ayurveda, Acupressure, Marma Therapy, Weight Loss" },
+      { "label": "Batch Size", "value": "Small, personalized groups" },
+      { "label": "Levels", "value": "Beginner & Intermediate" },
+      { "label": "Approach", "value": "Holistic – mind, body & spirit" },
+      { "label": "Focus", "value": "Long-term, natural wellness" }
+    ]
+  },
+  "servicesPage": {
+    "hero": {
+      "label": "What We Offer",
+      "heading": "Yoga Program",
+      "desc": "Every practice we offer is rooted in ancient wisdom – and designed for your modern life."
+    },
+    "enquireNow": "Enquire Now",
+    "benefitsLabel": "Benefits",
+    "items": [
+      {
+        "id": "yoga",
+        "title": "Yoga Classes",
+        "badge": "Beginner & Intermediate",
+        "desc": "Our yoga sessions are thoughtfully designed for individuals at both beginner and intermediate levels. Whether you are stepping onto the mat for the first time or looking to deepen your existing practice, our classes offer a structured, mindful, and progressive experience. Each session focuses on building strength, improving flexibility, releasing tension, and cultivating a quiet, focused mind.",
+        "features": ["Beginner and Intermediate Yoga", "Kids Yoga", "Women wellness yoga"]
+      },
+      {
+        "id": "weight-loss",
+        "title": "Weight Loss Program",
+        "badge": "Our Speciality",
+        "desc": "Our dedicated weight loss program is one of our most sought-after offerings. We combine the intensity of Power Yoga with personalized dietary guidance to create a program that is both effective and sustainable. Unlike crash diets or extreme routines, our approach works with your body – building metabolism, endurance, and a genuine relationship with healthy living.",
+        "features": ["Dedicated weight loss batches", "Power yoga combined with diet support", "Metabolism-focused routines", "Progress tracking", "Small batch – personal attention guaranteed"]
+      },
+      {
+        "id": "sound-healing",
+        "title": "Sound Healing",
+        "badge": "Ancient Healing",
+        "desc": "Experience deep relaxation and inner balance through the healing vibrations of sound.",
+        "features": ["One-to-One Sound Healing Sessions", "Group Sound Healing Sessions", "Aura Cleansing", "Chakra Balancing"],
+        "benefits": ["- Stress Relief", "- Emotional Balance", "- Mental Clarity", "- Better Sleep", "- Inner Peace & Well-being"]
+      }
+    ]
+  },
+  "schedulePage": {
+    "hero": {
+      "label": "Timetable",
+      "heading": "Class Details",
+      "desc": "Find a time that fits your life – and commit to your wellness journey."
+    },
+    "table": {
+      "classHeader": "Class",
+      "formatHeader": "Format",
+      "timeHeader": "Time"
+    },
+    "classes": [
+      {
+        "name": "Personalized Batches",
+        "slots": [
+          { "time": "5:00 AM – 6:00 AM", "levelKey": "smallGroup", "level": "Small Groups | Offline + Online" },
+          { "time": "7:00 AM – 8:00 AM", "levelKey": "smallGroup", "level": "Small Groups | Offline + Online" },
+          { "time": "6:40 PM – 7:40 PM", "levelKey": "smallGroup", "level": "Small Groups | Offline + Online" }
+        ]
+      },
+      {
+        "name": "Weight Loss Batch",
+        "slots": [
+          { "time": "6:00 AM – 7:00 AM", "levelKey": "onlineGroup", "level": "Online Group" },
+          { "time": "8:10 AM – 9:15 AM", "levelKey": "offlineBatch", "level": "Offline Batch" }
+        ]
+      },
+      {
+        "name": "Kids Batch",
+        "slots": [
+          { "time": "5:30 PM – 6:30 PM", "levelKey": "offlineOnly", "level": "Offline Only" }
+        ]
+      }
+    ]
+  },
+  "galleryPage": {
+    "hero": {
+      "label": "Gallery & Stories",
+      "heading": "Moments of Transformation",
+      "desc": "A glimpse into our studio, our community, and the journeys that unfold here."
+    },
+    "images": [
+      { "src": "/images/image-1.jpeg", "alt": "Yoga session", "tall": true },
+      { "src": "/images/image-2.jpeg", "alt": "Yoga practice", "tall": false },
+      { "src": "/images/image-3.jpg", "alt": "Yoga pose", "tall": false },
+      { "src": "/images/image-4.jpeg", "alt": "Yoga class", "tall": true },
+      { "src": "/images/group-img.jpeg", "alt": "Group yoga session", "tall": false },
+      { "src": "/images/_1851.JPG.jpeg", "alt": "Studio session", "tall": true },
+      { "src": "/images/_6505.JPG.jpeg", "alt": "Yoga practice", "tall": false },
+      { "src": "/images/_6608.JPG.jpeg", "alt": "Studio yoga", "tall": false },
+      { "src": "/images/_6770.JPG.jpeg", "alt": "Yoga class", "tall": true },
+      { "src": "/images/_6818.JPG.jpeg", "alt": "Meditation session", "tall": false },
+      { "src": "/images/_6835.JPG.jpeg", "alt": "Yoga pose", "tall": true },
+      { "src": "/images/_6846.JPG.jpeg", "alt": "Studio practice", "tall": false },
+      { "src": "/images/17.jpeg", "alt": "Yoga practice", "tall": false },
+      { "src": "/images/WhatsApp%20Image%202026-03-25%20at%2012.55.43%20PM.jpeg", "alt": "Studio moment", "tall": false },
+      { "src": "/gallery/05.jpeg", "alt": "Yoga studio", "tall": true },
+      { "src": "/gallery/07.jpeg", "alt": "Yoga class", "tall": false },
+      { "src": "/gallery/08.jpeg", "alt": "Studio session", "tall": false },
+      { "src": "/gallery/09.jpeg", "alt": "Yoga practice", "tall": true },
+      { "src": "/gallery/12.jpeg", "alt": "Yoga pose", "tall": false },
+      { "src": "/gallery/13.jpeg", "alt": "Studio yoga", "tall": true },
+      { "src": "/gallery/14.jpeg", "alt": "Yoga session", "tall": false },
+      { "src": "/gallery/15.jpeg", "alt": "Yoga class", "tall": false },
+      { "src": "/gallery/16.jpeg", "alt": "Meditation practice", "tall": true },
+      { "src": "/gallery/17.jpeg", "alt": "Studio practice", "tall": false },
+      { "src": "/gallery/18.jpeg", "alt": "Yoga pose", "tall": false },
+      { "src": "/gallery/19.jpeg", "alt": "Yoga session", "tall": true },
+      { "src": "/gallery/20.jpeg", "alt": "Studio yoga", "tall": false },
+      { "src": "/gallery/21.jpeg", "alt": "Yoga class", "tall": false },
+      { "src": "/gallery/22.jpeg", "alt": "Meditation session", "tall": true },
+      { "src": "/gallery/23.jpeg", "alt": "Studio practice", "tall": false }
+    ],
+    "testimonialsLabel": "Testimonials",
+    "testimonialsHeading": "Real Stories. Real Results.",
+    "testimonials": [
+      { "name": "Priya S.", "text": "Ranjana Studio completely changed my relationship with my body. I lost 8 kgs in 3 months — but more importantly, I finally feel calm and strong.", "program": "Weight Loss Program", "result": "Lost 8 kgs in 3 months" },
+      { "name": "Meena R.", "text": "The personalized attention here is unlike any gym or studio I've visited. The marma therapy sessions have been life-changing for my stress levels.", "program": "Marma Therapy", "result": "Stress-free lifestyle" },
+      { "name": "Anita D.", "text": "Such a peaceful, warm environment. The Ayurveda sessions combined with yoga have genuinely improved my digestion and sleep.", "program": "Ayurveda & Yoga", "result": "Better digestion & sleep" },
+      { "name": "Sunita K.", "text": "I joined with severe back pain and was hesitant about yoga. After 2 months, not only is my pain reduced, but I feel more energetic than I have in years.", "program": "Yoga Classes", "result": "Reduced chronic back pain" },
+      { "name": "Rekha M.", "text": "The small batch size makes all the difference. The instructor knows my strengths and weaknesses, and every session feels tailored to me.", "program": "Yoga Classes", "result": "Personalized growth" }
+    ]
+  },
+  "contactPage": {
+    "hero": {
+      "label": "Get in Touch",
+      "heading": "Let's Connect",
+      "desc": "Have a question, or ready to begin? We'd love to hear from you."
+    },
+    "contactInfoHeading": "Contact Information",
+    "contactInfo": [
+      { "key": "address", "label": "Address", "value": "Badrish colony, Lane no 6, House no 168, Near Ambiwala Gurudwara, Dharmpur (Danda), Dehradun" },
+      { "key": "phone", "label": "Phone", "value": "7409508399, 7452024056", "href": "tel:+917409508399" },
+      { "key": "whatsapp", "label": "WhatsApp", "value": "7409508399", "href": "https://wa.me/917409508399" },
+      { "key": "instagram", "label": "Instagram", "value": "@yogicsoul_ranj", "href": "https://www.instagram.com/yogicsoul_ranj?igsh=c2h4d3pibGVtZjQw" }
+    ],
+    "mapTitle": "Google Map Embed",
+    "mapNote": "[Provide Google Maps link to embed]",
+    "formHeading": "Send Us a Message",
+    "formSubheading": "We'll get back to you within 24 hours.",
+    "successHeading": "Thank you for reaching out!",
+    "successDesc": "We will get back to you within 24 hours.",
+    "labels": {
+      "fullName": "Full Name *",
+      "phone": "Phone Number *",
+      "email": "Email Address",
+      "interest": "Interested In *",
+      "batchTime": "Preferred Batch Time",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your full name",
+      "phone": "Your mobile number",
+      "email": "Your email (optional)",
+      "interest": "Select a service",
+      "batchTime": "Select a batch time",
+      "message": "Any specific questions or health concerns..."
+    },
+    "interests": ["Yoga Classes", "Weight Loss Program", "Ayurveda", "Acupressure", "Marma Therapy", "General Enquiry"],
+    "batchTimes": ["Morning", "Evening", "Flexible"],
+    "submit": "Send Enquiry",
+    "privacyNote": "Your information is safe with us and will never be shared with third parties."
+  },
+  "upcomingEventPage": {
+    "hero": {
+      "label": "What's On",
+      "heading": "Upcoming Events",
+      "desc": "Join us for workshops, programs, and open sessions designed to help you begin or deepen your wellness journey."
+    },
+    "reserveSpot": "Reserve My Spot",
+    "events": [
+      {
+        "title": "Yoga Carnival",
+        "date": "June 21, 2026 — International Yoga Day",
+        "time": "",
+        "location": "",
+        "spots": "",
+        "desc": "Inner Harmony Festival — Ranjana Yoga Studio as Yoga Partner alongside MAX Healthcare & Akaaya Events. DM for more info: 9899861888",
+        "image": "/event/event-1.jpeg"
+      }
+    ],
+    "cta": {
+      "heading": "Don't See What You're Looking For?",
+      "desc": "We regularly add new workshops and programs. Get in touch and we'll let you know about upcoming sessions that match your goals.",
+      "button": "Contact Us"
+    }
+  }
+}
