@@ -4,11 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
 import { SEO } from '@/components/SEO';
+import { tArray } from '@/i18n/i18n';
 import { ArrowRight, Calendar, Clock, MapPin, Users } from 'lucide-react';
 
 export default function UpcomingEvent() {
   const { t } = useTranslation();
-  const events = t('upcomingEventPage.events', { returnObjects: true });
+  const events = tArray(t, 'upcomingEventPage.events');
 
   return (
     <div data-testid="upcoming-event-page">

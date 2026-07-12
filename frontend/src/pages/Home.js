@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
 import { SEO } from '@/components/SEO';
+import { tArray } from '@/i18n/i18n';
 import { ArrowRight, ArrowDown, Leaf, Waves, Plus, Star, Quote, Instagram, MessageCircle } from 'lucide-react';
 
 const HERO_FIGURE = '/images/HERO_BANNER_NEW.png';
@@ -179,7 +180,7 @@ function HeroSection() {
 
 function StatsSection() {
   const { t } = useTranslation();
-  const items = t('home.stats.items', { returnObjects: true });
+  const items = tArray(t, 'home.stats.items');
 
   return (
     <section data-testid="stats-section" className="py-20 lg:py-24 bg-ivory relative overflow-hidden">
@@ -225,7 +226,7 @@ function StatsSection() {
 
 function ServicesSection() {
   const { t } = useTranslation();
-  const services = t('home.services.items', { returnObjects: true });
+  const services = tArray(t, 'home.services.items');
 
   return (
     <section data-testid="services-overview" className="py-20 lg:py-24 bg-beige/50 relative overflow-hidden">
@@ -269,7 +270,7 @@ function ServicesSection() {
 
 function WeightLossSection() {
   const { t } = useTranslation();
-  const features = t('home.weightLoss.features', { returnObjects: true });
+  const features = tArray(t, 'home.weightLoss.features');
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -345,7 +346,7 @@ function WeightLossSection() {
 
 function WhyUsSection() {
   const { t } = useTranslation();
-  const cards = t('home.whyUs.cards', { returnObjects: true });
+  const cards = tArray(t, 'home.whyUs.cards');
 
   return (
     <section data-testid="why-us-section" className="bg-beige/30 relative">
@@ -397,7 +398,7 @@ function WhyUsSection() {
 
 function TestimonialsSection() {
   const { t } = useTranslation();
-  const testimonials = t('home.testimonials.items', { returnObjects: true });
+  const testimonials = tArray(t, 'home.testimonials.items');
   const [active, setActive] = useState(0);
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });

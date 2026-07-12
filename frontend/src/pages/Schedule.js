@@ -3,6 +3,7 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from '@/components/Ani
 import { FeesBatchDetails } from '@/components/FeesBatchDetails';
 import { LotusDivider } from '@/components/LotusDecor';
 import { SEO } from '@/components/SEO';
+import { tArray } from '@/i18n/i18n';
 
 const levelColors = {
   smallGroup: 'bg-blush/40 text-charcoal',
@@ -13,7 +14,7 @@ const levelColors = {
 
 export default function Schedule() {
   const { t } = useTranslation();
-  const classSchedule = t('schedulePage.classes', { returnObjects: true });
+  const classSchedule = tArray(t, 'schedulePage.classes');
 
   return (
     <div data-testid="schedule-page">

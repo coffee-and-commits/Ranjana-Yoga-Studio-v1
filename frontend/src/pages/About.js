@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
 import { SEO } from '@/components/SEO';
+import { tArray } from '@/i18n/i18n';
 import { Award, BookOpen, Heart } from 'lucide-react';
 
 const ABOUT_IMG = '/images/group-img.jpeg';
@@ -11,10 +12,10 @@ const PILLAR_ICONS = [BookOpen, Heart, Award];
 
 export default function About() {
   const { t } = useTranslation();
-  const storyParagraphs = t('about.story.paragraphs', { returnObjects: true });
-  const instructorParagraphs = t('about.instructor.paragraphs', { returnObjects: true });
-  const pillars = t('about.pillars', { returnObjects: true });
-  const highlights = t('about.highlights', { returnObjects: true });
+  const storyParagraphs = tArray(t, 'about.story.paragraphs');
+  const instructorParagraphs = tArray(t, 'about.instructor.paragraphs');
+  const pillars = tArray(t, 'about.pillars');
+  const highlights = tArray(t, 'about.highlights');
 
   return (
     <div data-testid="about-page">

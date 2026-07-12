@@ -1,0 +1,3 @@
+config.local.php
+data/backups/*
+!data/backups/.gitkeep

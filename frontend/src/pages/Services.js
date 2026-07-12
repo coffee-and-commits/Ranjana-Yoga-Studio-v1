@@ -5,6 +5,7 @@ import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/compon
 import { FeesBatchDetails } from '@/components/FeesBatchDetails';
 import { LotusDivider } from '@/components/LotusDecor';
 import { SEO } from '@/components/SEO';
+import { tArray } from '@/i18n/i18n';
 import { ArrowRight, Check } from 'lucide-react';
 import { WHATSAPP_URL } from '@/lib/constants';
 
@@ -80,7 +81,7 @@ function ServiceBlock({ service, reverse, benefitsLabel, enquireNow }) {
 export default function Services() {
   const { t } = useTranslation();
   const { hash } = useLocation();
-  const services = t('servicesPage.items', { returnObjects: true });
+  const services = tArray(t, 'servicesPage.items');
 
   useEffect(() => {
     if (!hash) return;

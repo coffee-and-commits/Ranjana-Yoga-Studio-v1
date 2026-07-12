@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedSection, FadeIn } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
 import { SEO } from '@/components/SEO';
+import { tArray } from '@/i18n/i18n';
 import { MapPin, Phone, MessageCircle, Instagram, Send, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -15,24 +16,45 @@ const CONTACT_ICONS = {
 
 export default function Contact() {
   const { t } = useTranslation();
-  const contactInfo = t('contactPage.contactInfo', { returnObjects: true });
-  const interests = t('contactPage.interests', { returnObjects: true });
-  const batchTimes = t('contactPage.batchTimes', { returnObjects: true });
+  const contactInfo = tArray(t, 'contactPage.contactInfo');
+  const interests = tArray(t, 'contactPage.interests');
+  const batchTimes = tArray(t, 'contactPage.batchTimes');
 
   const [formData, setFormData] = useState({
-    name: '', phone: '', email: '', interest: '', batchTime: '', message: '',
+    name: '', phone: '', email: '', interest: '', batchTime: '', message: '', website: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
   const [interestOpen, setInterestOpen] = useState(false);
   const [batchOpen, setBatchOpen] = useState(false);
 
-  const handleSubmit = (e) => {
+  const API_URL = process.env.REACT_APP_API_URL || '/php-backend/api/contact.php';
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', phone: '', email: '', interest: '', batchTime: '', message: '' });
-    }, 4000);
+    setError('');
+    setSubmitting(true);
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) {
+        throw new Error((data.errors && data.errors[0]) || data.error || 'Something went wrong. Please try again.');
+      }
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: '', phone: '', email: '', interest: '', batchTime: '', message: '', website: '' });
+      }, 4000);
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (field, value) => {
@@ -132,6 +154,18 @@ export default function Contact() {
                       className="space-y-5"
                       data-testid="contact-form"
                     >
+                      {/* Honeypot: hidden from real users, catches simple bots */}
+                      <input
+                        type="text"
+                        name="website"
+                        value={formData.website}
+                        onChange={(e) => handleChange('website', e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                        className="hidden"
+                        aria-hidden="true"
+                      />
+
                       {/* Name */}
                       <div>
                         <label className="font-jost text-xs tracking-[0.1em] uppercase text-taupe mb-2 block">{t('contactPage.labels.fullName')}</label>
@@ -260,14 +294,21 @@ export default function Contact() {
                         />
                       </div>
 
+                      {error && (
+                        <p className="font-jost text-sm text-red-600 text-center" data-testid="form-error">
+                          {error}
+                        </p>
+                      )}
+
                       {/* Submit */}
                       <button
                         type="submit"
+                        disabled={submitting}
                         data-testid="submit-button"
-                        className="w-full font-jost text-sm font-medium tracking-[0.08em] px-8 py-3.5 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300 flex items-center justify-center gap-2"
+                        className="w-full font-jost text-sm font-medium tracking-[0.08em] px-8 py-3.5 rounded-full bg-blush border border-gold-soft text-charcoal hover:bg-deep-rose hover:text-ivory transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         <Send size={16} />
-                        {t('contactPage.submit')}
+                        {submitting ? t('contactPage.submitting', 'Sending...') : t('contactPage.submit')}
                       </button>
 
                       <p className="font-jost text-xs text-taupe/60 text-center">

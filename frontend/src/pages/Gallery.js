@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
 import { LotusDivider } from '@/components/LotusDecor';
 import { SEO } from '@/components/SEO';
+import { tArray } from '@/i18n/i18n';
 import { X, Quote, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Gallery() {
   const { t } = useTranslation();
-  const galleryImages = t('galleryPage.images', { returnObjects: true });
-  const testimonials = t('galleryPage.testimonials', { returnObjects: true });
+  const galleryImages = tArray(t, 'galleryPage.images');
+  const testimonials = tArray(t, 'galleryPage.testimonials');
   const [lightbox, setLightbox] = useState(null);
 
   return (
